@@ -444,12 +444,6 @@ namespace JumpStart
 				HiveMind6.SetResult(calamityMod.ItemType("DankStaff"), 1);
 				HiveMind6.AddRecipe();
 
-				ModRecipe HiveMind7 = new ModRecipe(this);
-				HiveMind7.AddRecipeGroup("JumpStart:HiveMind", 1);
-				HiveMind7.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-				HiveMind7.AddTile(TileID.TinkerersWorkbench);
-				HiveMind7.SetResult(calamityMod.ItemType("LeechingDagger"), 1);
-				HiveMind7.AddRecipe();
 
 				//Perforators
 				ModRecipe Perforators1 = new ModRecipe(this);
@@ -537,6 +531,8 @@ namespace JumpStart
 				SlimeGod5.SetResult(calamityMod.ItemType("CorroslimeStaff"), 1);
 				SlimeGod5.AddRecipe();
 
+
+				//Hard mode
 				//Cryogen
 				ModRecipe Cryogen1 = new ModRecipe(this);
 				Cryogen1.AddRecipeGroup("JumpStart:Cryogen", 1);
@@ -761,7 +757,7 @@ namespace JumpStart
 				AstrumAureus5.SetResult(calamityMod.ItemType("Nebulash"), 1);
 				AstrumAureus5.AddRecipe();
 
-
+				/**
 				//The Plaguebringer Goliath
 				ModRecipe PlaguebringerGoliath1 = new ModRecipe(this);
 				PlaguebringerGoliath1.AddRecipeGroup("JumpStart:PlaguebringerGoliath", 1);
@@ -777,7 +773,6 @@ namespace JumpStart
 				PlaguebringerGoliath2.SetResult(calamityMod.ItemType("BlightSpewer"), 1);
 				PlaguebringerGoliath2.AddRecipe();
 
-			/**
 				ModRecipe PlaguebringerGoliath3 = new ModRecipe(this);
 				PlaguebringerGoliath3.AddRecipeGroup("JumpStart:PlaguebringerGoliath", 1);
 				PlaguebringerGoliath3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
@@ -842,7 +837,7 @@ namespace JumpStart
 				PlaguebringerGoliath12.AddTile(TileID.TinkerersWorkbench);
 				PlaguebringerGoliath12.SetResult(calamityMod.ItemType("TheSyringe"), 1);
 				PlaguebringerGoliath12.AddRecipe();
-			
+			**/
 				//Ravager
 			
 				ModRecipe Ravager1 = new ModRecipe(this);
@@ -1187,7 +1182,7 @@ namespace JumpStart
 				Yharon8.AddTile(TileID.TinkerersWorkbench);
 				Yharon8.SetResult(calamityMod.ItemType("ChickenCannon"), 1);
 				Yharon8.AddRecipe();
-			**/
+			
 			}
         }
 
