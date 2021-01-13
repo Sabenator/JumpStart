@@ -762,6 +762,7 @@ namespace JumpStart
 				AstrumAureus5.SetResult(calamityMod.ItemType("Nebulash"), 1);
 				AstrumAureus5.AddRecipe();
 
+				
 				//The Plaguebringer Goliath
 				ModRecipe PlaguebringerGoliath1 = new ModRecipe(this);
 				PlaguebringerGoliath1.AddRecipeGroup("JumpStart:PlaguebringerGoliath", 1);
@@ -777,6 +778,7 @@ namespace JumpStart
 				PlaguebringerGoliath2.SetResult(calamityMod.ItemType("BlightSpewer"), 1);
 				PlaguebringerGoliath2.AddRecipe();
 
+				//doesnt work past this point
 				
 				ModRecipe PlaguebringerGoliath3 = new ModRecipe(this);
 				PlaguebringerGoliath3.AddRecipeGroup("JumpStart:PlaguebringerGoliath", 1);
@@ -785,7 +787,7 @@ namespace JumpStart
 				PlaguebringerGoliath3.SetResult(calamityMod.ItemType("FuelCellBundle"), 1);
 				PlaguebringerGoliath3.AddRecipe();
 				
-
+				/**
 				ModRecipe PlaguebringerGoliath4 = new ModRecipe(this);
 				PlaguebringerGoliath4.AddRecipeGroup("JumpStart:PlaguebringerGoliath", 1);
 				PlaguebringerGoliath4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
@@ -1184,7 +1186,9 @@ namespace JumpStart
 				Yharon8.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
 				Yharon8.AddTile(TileID.TinkerersWorkbench);
 				Yharon8.SetResult(calamityMod.ItemType("ChickenCannon"), 1);
-				Yharon8.AddRecipe(); 
+				Yharon8.AddRecipe();
+				**/
+				
 			}
 
 		}
