@@ -1,9 +1,12 @@
-JumpStart is a mod in progress intended to make the game a little bit less tedious.
+JumpStart is a mod in progress intended to make the game a little bit less tedious and annoying
+
 Currently it adds:
-	-A starter bag
-	-Calamity support for imkSushisMod loot swap tokens up to Astrum Aureus
-	-Some Pre-Hardmode bosses drop Magic Storage components
+     -A starter bag
+     -Calamity support for imkSushisMod loot swap tokens up to Astrum Aureus
+     -Some Pre-Hardmode bosses drop Magic Storage components
+     -Some Pre-Hardmode bosses drop Gem bags.
+
 Planned Features:
-	-Full loot swapping recipes for Calamity, and maybe some other big content mods
-	-The ability to craft bars down into lower tiers, so that when you need chlorophyte Post-Yharon you don't need to go mining.
-	-What ever I feel like.
+     -Full loot swapping recipes for Calamity, and maybe some other big content mods
+     -The ability to craft bars down into lower tiers, so that when you need chlorophyte Post-Yharon you don't need to go mining. (For a friend)
+     -What ever I feel like.

@@ -48,8 +48,9 @@ namespace JumpStart.Items
 			int[] gemstonearray = gemstones.ToArray();
 
 			player.QuickSpawnItem(gemstonearray[Main.rand.Next(gemstonearray.Length - 1)], Main.rand.Next(4));
-			player.QuickSpawnItem(gemstonearray[Main.rand.Next(gemstonearray.Length - 1)], Main.rand.Next(6));
-			player.QuickSpawnItem(gemstonearray[Main.rand.Next(gemstonearray.Length - 1)], Main.rand.Next(8));
+			player.QuickSpawnItem(gemstonearray[Main.rand.Next(gemstonearray.Length - 1)], Main.rand.Next(2, 6));
+			player.QuickSpawnItem(gemstonearray[Main.rand.Next(gemstonearray.Length - 1)], Main.rand.Next(4, 8));
+			player.QuickSpawnItem(gemstonearray[Main.rand.Next(2, gemstonearray.Length - 1)], Main.rand.Next(6, 10));
 
 		}
 		
