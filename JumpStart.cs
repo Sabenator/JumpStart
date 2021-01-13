@@ -779,7 +779,7 @@ namespace JumpStart
 				PlaguebringerGoliath2.AddRecipe();
 
 				//doesnt work past this point
-				
+				/**
 				ModRecipe PlaguebringerGoliath3 = new ModRecipe(this);
 				PlaguebringerGoliath3.AddRecipeGroup("JumpStart:PlaguebringerGoliath", 1);
 				PlaguebringerGoliath3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
@@ -787,7 +787,6 @@ namespace JumpStart
 				PlaguebringerGoliath3.SetResult(calamityMod.ItemType("FuelCellBundle"), 1);
 				PlaguebringerGoliath3.AddRecipe();
 				
-				/**
 				ModRecipe PlaguebringerGoliath4 = new ModRecipe(this);
 				PlaguebringerGoliath4.AddRecipeGroup("JumpStart:PlaguebringerGoliath", 1);
 				PlaguebringerGoliath4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
