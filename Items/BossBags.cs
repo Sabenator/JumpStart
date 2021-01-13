@@ -42,14 +42,14 @@ namespace AllTheMods.Items
 				}
 				else
 				{
-					player.QuickSpawnItem(ItemID.Diamond, Main.rand.Next(13, 20));
+					player.QuickSpawnItem(mod.ItemType("GemLootBag"));
 					player.QuickSpawnItem(magicStorage.ItemType("StorageComponent"), Main.rand.Next(4, 8));
 				}
 
 			}
 			if (context == "bossBag" && arg == ItemID.EyeOfCthulhuBossBag && magicStorage != null)
 			{
-
+				player.QuickSpawnItem(mod.ItemType("GemLootBag"));
 				if (WorldGen.crimson) {
 					player.QuickSpawnItem(magicStorage.ItemType("UpgradeCrimtane"), Main.rand.Next(4, 9));
 					

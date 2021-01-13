@@ -27,8 +27,9 @@ namespace JumpStart.Items
 			return true;
 		}
 		static Mod calamityMod => ModLoader.GetMod("CalamityMod");
-        public override void OnConsumeItem(Player player)
-        {
+		static Mod imkSushisMod => ModLoader.GetMod("imkSushisMod");
+		public override void OnConsumeItem(Player player)
+		{
 			player.QuickSpawnItem(ItemID.IronPickaxe);
 			player.QuickSpawnItem(ItemID.IronAxe);
 			player.QuickSpawnItem(ItemID.LesserHealingPotion, 10);
@@ -36,7 +37,8 @@ namespace JumpStart.Items
 			player.QuickSpawnItem(ItemID.WoodenArrow, 100);
 			player.QuickSpawnItem(ItemID.Torch, 50);
 
-			if (Main.expertMode) {
+			if (Main.expertMode)
+			{
 				player.QuickSpawnItem(ItemID.SpelunkerPotion, 2);
 				player.QuickSpawnItem(ItemID.CloudinaBottle);
 				player.QuickSpawnItem(ItemID.HermesBoots);
@@ -45,12 +47,13 @@ namespace JumpStart.Items
 				player.QuickSpawnItem(ItemID.ManaCrystal);
 				player.QuickSpawnItem(ItemID.CopperBow);
 
-				if (calamityMod == null) {
+				if (calamityMod == null)
+				{
 					player.QuickSpawnItem(ItemID.AmethystStaff);
 					player.QuickSpawnItem(ItemID.SlimeCrown);
 				}
-				
+
 			}
 		}
-    }
+	}
 }
