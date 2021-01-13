@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "ecKZxaI61RgnLIxLCMVIxIl/0CCrM6ac431ZyZ4eSiepcDlWefOvOK/bLB/Qfh+n+x4gKcEOe7gVjpsUhiHm3Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Saben Young\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\JumpStart\\JumpStart.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Saben Young\\.nuget\\packages\\tmodloader.codeassist\\0.1.1\\tmodloader.codeassist.0.1.1.nupkg.sha512"
+  ],
+  "logs": []
+}
