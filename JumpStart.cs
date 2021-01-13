@@ -837,7 +837,7 @@ namespace JumpStart
 				PlaguebringerGoliath12.AddTile(TileID.TinkerersWorkbench);
 				PlaguebringerGoliath12.SetResult(calamityMod.ItemType("TheSyringe"), 1);
 				PlaguebringerGoliath12.AddRecipe();
-			**/
+			
 				//Ravager
 			
 				ModRecipe Ravager1 = new ModRecipe(this);
@@ -975,14 +975,14 @@ namespace JumpStart
 				Providence6.AddTile(TileID.TinkerersWorkbench);
 				Providence6.SetResult(calamityMod.ItemType("TelluricGaze"), 1);
 				Providence6.AddRecipe();
-
+			
 				ModRecipe Providence7 = new ModRecipe(this);
 				Providence7.AddRecipeGroup("JumpStart:Providence", 1);
 				Providence7.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
 				Providence7.AddTile(TileID.TinkerersWorkbench);
 				Providence7.SetResult(calamityMod.ItemType("SolarFlare"), 1);
 				Providence7.AddRecipe();
-
+			
 				//Polterghast
 				ModRecipe Polterghast1 = new ModRecipe(this);
 				Polterghast1.AddRecipeGroup("JumpStart:Polterghast", 1);
@@ -1039,7 +1039,7 @@ namespace JumpStart
 				Polterghast8.AddTile(TileID.TinkerersWorkbench);
 				Polterghast8.SetResult(calamityMod.ItemType("TerrorBlade"), 1);
 				Polterghast8.AddRecipe();
-
+			
 				//Old Duke
 				ModRecipe OldDuke1 = new ModRecipe(this);
 				OldDuke1.AddRecipeGroup("JumpStart:OldDuke", 1);
@@ -1075,14 +1075,14 @@ namespace JumpStart
 				OldDuke5.AddTile(TileID.TinkerersWorkbench);
 				OldDuke5.SetResult(calamityMod.ItemType("CadaverousCarrion"), 1);
 				OldDuke5.AddRecipe();
-
+			
 				ModRecipe OldDuke6 = new ModRecipe(this);
 				OldDuke6.AddRecipeGroup("JumpStart:OldDuke", 1);
 				OldDuke6.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
 				OldDuke6.AddTile(TileID.TinkerersWorkbench);
 				OldDuke6.SetResult(calamityMod.ItemType("ToxicantTwister"), 1);
 				OldDuke6.AddRecipe();
-
+			
 				//Devourer of Gods
 				ModRecipe DOG1 = new ModRecipe(this);
 				DOG1.AddRecipeGroup("JumpStart:DOG", 1);
@@ -1182,7 +1182,7 @@ namespace JumpStart
 				Yharon8.AddTile(TileID.TinkerersWorkbench);
 				Yharon8.SetResult(calamityMod.ItemType("ChickenCannon"), 1);
 				Yharon8.AddRecipe();
-			
+			**/
 			}
         }
 
