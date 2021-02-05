@@ -1,12 +1,12 @@
-using Terraria.ModLoader;
-using Terraria.Localization;
+using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
-using System.Collections.Generic;
+using Terraria.Localization;
+using Terraria.ModLoader;
 
 namespace JumpStart
 {
-	public class JumpStart : Mod
+    public class JumpStart : Mod
 	{
 		static Mod magicStorage => ModLoader.GetMod("MagicStorage");
 		static Mod calamityMod => ModLoader.GetMod("CalamityMod");
@@ -144,15 +144,15 @@ namespace JumpStart
 
 				RecipeGroup PlaguebringerGoliath = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Plaguebringer Goliath Weapon", new int[] {
 					calamityMod.ItemType("TheHive"),
-					calamityMod.ItemType("BlightSpewer"),
+					calamityMod.ItemType("MepheticSprayer"),
 					calamityMod.ItemType("FuelCellBundle"),
 					calamityMod.ItemType("Malevolence"),
 					calamityMod.ItemType("InfectedRemote"),
-					calamityMod.ItemType("Virulence"),
+					calamityMod.ItemType("VirulentKatana"),
 					calamityMod.ItemType("DiseasedPike"),
 					calamityMod.ItemType("PlagueStaff"),
 					calamityMod.ItemType("PestilentDefiler"),
-					calamityMod.ItemType("ThePlagueBringer"),
+					calamityMod.ItemType("ThePlaguebringer"),
 					calamityMod.ItemType("TheSyringe")
 				});
 				RecipeGroup.RegisterGroup("JumpStart:PlaguebringerGoliath", PlaguebringerGoliath);
@@ -225,12 +225,12 @@ namespace JumpStart
 				RecipeGroup.RegisterGroup("JumpStart:DOG", DOG);
 
 				RecipeGroup Yharon = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Jungle Dragon Yharon Weapon", new int[] {
-					calamityMod.ItemType("YharonsKindleStaff"),
-					calamityMod.ItemType("TheFinalDawn"),
+					calamityMod.ItemType("AngryChickenStaff"),
+					calamityMod.ItemType("FinalDawn"),
 					calamityMod.ItemType("DragonsBreath"),
 					calamityMod.ItemType("PhoenixFlameBarrage"),
 					calamityMod.ItemType("TheBurningSky"),
-					calamityMod.ItemType("InfernalSpear"),
+					calamityMod.ItemType("ProfanedTrident"),
 					calamityMod.ItemType("DragonRage"),
 					calamityMod.ItemType("ChickenCannon")
 				});
@@ -757,7 +757,7 @@ namespace JumpStart
 				AstrumAureus5.SetResult(calamityMod.ItemType("Nebulash"), 1);
 				AstrumAureus5.AddRecipe();
 
-				/**
+				
 				//The Plaguebringer Goliath
 				ModRecipe PlaguebringerGoliath1 = new ModRecipe(this);
 				PlaguebringerGoliath1.AddRecipeGroup("JumpStart:PlaguebringerGoliath", 1);
@@ -770,7 +770,7 @@ namespace JumpStart
 				PlaguebringerGoliath2.AddRecipeGroup("JumpStart:PlaguebringerGoliath", 1);
 				PlaguebringerGoliath2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
 				PlaguebringerGoliath2.AddTile(TileID.TinkerersWorkbench);
-				PlaguebringerGoliath2.SetResult(calamityMod.ItemType("BlightSpewer"), 1);
+				PlaguebringerGoliath2.SetResult(calamityMod.ItemType("MepheticSprayer"), 1);
 				PlaguebringerGoliath2.AddRecipe();
 
 				ModRecipe PlaguebringerGoliath3 = new ModRecipe(this);
@@ -799,7 +799,7 @@ namespace JumpStart
 				PlaguebringerGoliath6.AddRecipeGroup("JumpStart:PlaguebringerGoliath", 1);
 				PlaguebringerGoliath6.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
 				PlaguebringerGoliath6.AddTile(TileID.TinkerersWorkbench);
-				PlaguebringerGoliath6.SetResult(calamityMod.ItemType("Virulence"), 1);
+				PlaguebringerGoliath6.SetResult(calamityMod.ItemType("VirulentKatana"), 1);
 				PlaguebringerGoliath6.AddRecipe();
 
 			
@@ -828,7 +828,7 @@ namespace JumpStart
 				PlaguebringerGoliath10.AddRecipeGroup("JumpStart:PlaguebringerGoliath", 1);
 				PlaguebringerGoliath10.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
 				PlaguebringerGoliath10.AddTile(TileID.TinkerersWorkbench);
-				PlaguebringerGoliath10.SetResult(calamityMod.ItemType("Pandemic"), 1);
+				PlaguebringerGoliath10.SetResult(calamityMod.ItemType("ThePlaguebringer"), 1);
 				PlaguebringerGoliath10.AddRecipe();
 
 				ModRecipe PlaguebringerGoliath12 = new ModRecipe(this);
@@ -973,7 +973,7 @@ namespace JumpStart
 				Providence6.AddRecipeGroup("JumpStart:Providence", 1);
 				Providence6.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
 				Providence6.AddTile(TileID.TinkerersWorkbench);
-				Providence6.SetResult(calamityMod.ItemType("TelluricGaze"), 1);
+				Providence6.SetResult(calamityMod.ItemType("TelluricGlare"), 1);
 				Providence6.AddRecipe();
 			
 				ModRecipe Providence7 = new ModRecipe(this);
@@ -1131,14 +1131,14 @@ namespace JumpStart
 				Yharon1.AddRecipeGroup("JumpStart:Yharon", 1);
 				Yharon1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
 				Yharon1.AddTile(TileID.TinkerersWorkbench);
-				Yharon1.SetResult(calamityMod.ItemType("YharonsKindleStaff"), 1);
+				Yharon1.SetResult(calamityMod.ItemType("AngryChickenStaff"), 1);
 				Yharon1.AddRecipe();
 
 				ModRecipe Yharon2 = new ModRecipe(this);
 				Yharon2.AddRecipeGroup("JumpStart:Yharon", 1);
 				Yharon2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
 				Yharon2.AddTile(TileID.TinkerersWorkbench);
-				Yharon2.SetResult(calamityMod.ItemType("TheFinalDawn"), 1);
+				Yharon2.SetResult(calamityMod.ItemType("FinalDawn"), 1);
 				Yharon2.AddRecipe();
 
 				ModRecipe Yharon3 = new ModRecipe(this);
@@ -1152,7 +1152,7 @@ namespace JumpStart
 				Yharon4.AddRecipeGroup("JumpStart:Yharon", 1);
 				Yharon4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
 				Yharon4.AddTile(TileID.TinkerersWorkbench);
-				Yharon4.SetResult(calamityMod.ItemType("PhoenixFlameStaff"), 1);
+				Yharon4.SetResult(calamityMod.ItemType("PhoenixFlameBarrage"), 1);
 				Yharon4.AddRecipe();
 
 				ModRecipe Yharon5 = new ModRecipe(this);
@@ -1166,7 +1166,7 @@ namespace JumpStart
 				Yharon6.AddRecipeGroup("JumpStart:Yharon", 1);
 				Yharon6.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
 				Yharon6.AddTile(TileID.TinkerersWorkbench);
-				Yharon6.SetResult(calamityMod.ItemType("InfernalSpear"), 1);
+				Yharon6.SetResult(calamityMod.ItemType("ProfanedTrident"), 1);
 				Yharon6.AddRecipe();
 
 				ModRecipe Yharon7 = new ModRecipe(this);
@@ -1182,7 +1182,7 @@ namespace JumpStart
 				Yharon8.AddTile(TileID.TinkerersWorkbench);
 				Yharon8.SetResult(calamityMod.ItemType("ChickenCannon"), 1);
 				Yharon8.AddRecipe();
-			**/
+			
 			}
         }
 
