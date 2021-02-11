@@ -28,7 +28,7 @@ namespace JumpStart.NPCs
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath29;
             npc.aiStyle = -1;
-            npc.lifeMax = 100000;
+            npc.lifeMax = 80000;
             npc.damage = 125;
             npc.defense = 60;
             npc.knockBackResist = 0f;
@@ -55,10 +55,13 @@ namespace JumpStart.NPCs
         private bool repeatLaser;
         private int count;
         private bool dash;
+        private int tpCoordX;
+        private int tpCoordY;
 
 
         public override void AI()
         {
+            
             if (run == false)
             {
                 if (Main.expertMode)
@@ -75,6 +78,7 @@ namespace JumpStart.NPCs
             }
             npc.TargetClosest(true);
             Player player = Main.player[npc.target];
+
 
             if (!player.active || player.dead)
             {
@@ -95,69 +99,20 @@ namespace JumpStart.NPCs
             }
             else
             {
-                timer++;
-                if (timer == 30 && repeatLaser == true)
-                {
-                    Vector2 proj = new Vector2(10, 0);
-                    for (int i = 0; i < 4; i++)
-                    {
-                        int r4 = Main.rand.Next(0, 45);
-                        Projectile.NewProjectile(new Vector2(npc.Center.X, npc.Center.Y), proj.RotatedBy(MathHelper.ToRadians((i * 90) + r4)), ProjectileID.DeathLaser, (int)(npc.damage * 0.75) + Main.rand.Next(-50, 50), 5f);
-                    }
-                    repeatLaser = false;
-                }
-                if (timer > attackcd)
-                {
-                    if (Math.Abs(npc.Center.X - player.Center.X) > 900)
-                    {
-                        npc.position.X = player.Center.X;
-                        npc.position.Y = player.Center.Y + 100;
-                    }
-                    //attack selector
+                if (npc.life > npc.lifeMax * 0.75 && timer % 360 == 0) {
+                    int tpCoordX = Main.rand.Next(0, 480);
+                    int tpCoordY = Main.rand.Next(0, 1000);
 
-                    if (npc.life > npc.lifeMax * 0.1)
-                    {
-                        sel = Main.rand.Next(0, 7);
-                        if (sel == 0)
-                        {
-                            Vector2 proj = new Vector2(10, 0);
-                            int r1 = Main.rand.Next(0, 45);
-                            for (int i = 0; i < 4; i++)
-                            {
-                                Projectile.NewProjectile(new Vector2(npc.Center.X, npc.Center.Y), proj.RotatedBy(MathHelper.ToRadians((i * 90) + r1)), ProjectileID.DeathLaser, npc.damage / 2, 5f);
-                            }
-                            repeatLaser = true;
-                        }
-                        else if (sel == 1)
-                        {
-
-                            Vector2 proj = new Vector2(10, 0);
-                            for (int i = 0; i < 8; i++)
-                            {
-                                int r2 = Main.rand.Next(0, 45);
-                                Projectile.NewProjectile(new Vector2(npc.Center.X, npc.Center.Y), proj.RotatedBy(MathHelper.ToRadians((i * 45) + r2)), ProjectileID.DeathLaser, npc.damage / 2, 5f);
-                            }
-                        }
-                        else if (sel == 2 || sel == 3)
-                        {
-                            Vector2 proj = new Vector2(10, 0);
-                            int r3 = Main.rand.Next(0, 45);
-                            for (int i = 0; i < 16; i++)
-                            {
-                                Projectile.NewProjectile(new Vector2(npc.Center.X, npc.Center.Y), proj.RotatedBy(MathHelper.ToRadians((float)((i * 22.5) + r3))), ProjectileID.DeathLaser, npc.damage / 2, 5f);
-                            }
-                        }
-
-                    }
-                    timer = 0;
+                    NPC.NewNPC(tpCoordX, tpCoordY, mod.NPCType("Boss1Marker"),0, 0, 0, 0);
+                
                 }
             }
-           
 
 
 
 
 
+            timer++;
             }
         }
     }

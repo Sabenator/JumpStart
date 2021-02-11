@@ -13,26 +13,126 @@ using Terraria.Localization;
 
 namespace JumpStart
 {
-    public class JumpStartFunctions {
-        public static void ProjBurst(float x, float y, int velocity, int projID, int count, int BaseDmg, float kb)
-        {
-            float rotation = 360 / count;
-            Vector2 proj = new Vector2(velocity, 0);
-            for (int i = 0; i < count; i++)
+    public class rg
+    {
+        public bool valid = false;
+        public RecipeGroup _RecipeGroup = null;
+        
+        public bool Validate(int[] array) {
+            if (array.Contains(0) == false)
             {
-                Projectile.NewProjectile(new Vector2(x, y), proj.RotatedBy(i * rotation), projID, BaseDmg, kb);
+                return true;
+            }
+            else {
+                return false;
             }
         }
-        public static void ProjBurst(float x, float y, int velocity, int projID, int count, float expertScaling, int BaseDmg, float kb, int initRotation, int countMax)
+        public rg(Mod m, String Name, String a1, String a2)
         {
-            Vector2 proj = new Vector2(velocity, 0);
-            proj = proj.RotatedBy(MathHelper.ToRadians(initRotation));
-            int countR = Main.rand.Next(count, countMax);
-            for (int i = 0; i < countR; i++)
+            //if (m.ItemType(a1) != 0 && m.ItemType(a2) != 0)
+           // {
+            int[] arr = { m.ItemType(a1), m.ItemType(a2) };
+            if (Validate(arr) == true)
             {
-                proj = proj.RotatedBy(MathHelper.ToRadians(360 / countR));
-                Projectile.NewProjectile(new Vector2(x, y), proj, projID, BaseDmg, kb);
+                _RecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Name + " Weapon", arr);
             }
+           // }
+          //  else
+           // {
+
+           // }
+        }
+        public rg(Mod m, String Name, String a1, String a2, String a3)
+        {
+            //  if (m.ItemType(a1) != 0 && m.ItemType(a2) != 0 && m.ItemType(a3) != 0)
+            //   {
+
+            int[] arr = { m.ItemType(a1), m.ItemType(a2), m.ItemType(a3)};
+            if (Validate(arr) == true)
+            {
+                _RecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Name + " Weapon", arr);
+            }
+           // }
+           // else
+           // {
+
+            //}
+        }
+        public rg(Mod m, String Name, String a1, String a2, String a3, String a4)
+        {
+           // if (m.ItemType(a1) != 0 && m.ItemType(a2) != 0 && m.ItemType(a3) != 0 && m.ItemType(a4) != 0)
+           // {
+            int[] arr = { m.ItemType(a1), m.ItemType(a2), m.ItemType(a3), m.ItemType(a4) };
+            if (Validate(arr) == true)
+            {
+                _RecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Name + " Weapon", arr);
+            }
+          //  }
+           // else
+         //   {
+
+          //  }
+        }
+        public rg(Mod m, String Name, String a1, String a2, String a3, String a4, String a5)
+        {
+           // if (m.ItemType(a1) != 0 && m.ItemType(a2) != 0 && m.ItemType(a3) != 0 && m.ItemType(a4) != 0 && m.ItemType(a5) != 0)
+          //  {
+            int[] arr = { m.ItemType(a1), m.ItemType(a2), m.ItemType(a3), m.ItemType(a4), m.ItemType(a5) };
+            if (Validate(arr) == true)
+            {
+                _RecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Name + " Weapon", arr);
+            }
+           // }
+          //  else
+          //  {
+
+          //  }
+        }
+        public rg(Mod m, String Name, String a1, String a2, String a3, String a4, String a5, String a6)
+        {
+           // if (m.ItemType(a1) != 0 && m.ItemType(a2) != 0 && m.ItemType(a3) != 0 && m.ItemType(a4) != 0 && m.ItemType(a5) != 0 && m.ItemType(a6) != 0)
+          //  {
+            int[] arr = { m.ItemType(a1), m.ItemType(a2), m.ItemType(a3), m.ItemType(a4), m.ItemType(a5), m.ItemType(a6) };
+            if (Validate(arr) == true)
+            {
+                _RecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Name + " Weapon", arr);
+            }
+           // }
+           // else
+           // {
+
+           // }
+        }
+        public rg(Mod m, String Name, String a1, String a2, String a3, String a4, String a5, String a6, String a7)
+        {
+           // if (m.ItemType(a1) != 0 && m.ItemType(a2) != 0 && m.ItemType(a3) != 0 && m.ItemType(a4) != 0 && m.ItemType(a5) != 0 && m.ItemType(a6) != 0 && m.ItemType(a7) != 0)
+           // {
+            int[] arr = { m.ItemType(a1), m.ItemType(a2), m.ItemType(a3), m.ItemType(a4), m.ItemType(a5), m.ItemType(a6), m.ItemType(a7) };
+            if (Validate(arr) == true)
+            {
+                _RecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Name + " Weapon", arr);
+            }
+            //}
+          //  else
+           // {
+
+            //}
+        }
+        public rg(Mod m, String Name, String a1, String a2, String a3, String a4, String a5, String a6, String a7, String a8)
+        {
+           // if (m.ItemType(a1) != 0 && m.ItemType(a2) != 0 && m.ItemType(a3) != 0 && m.ItemType(a4) != 0 && m.ItemType(a5) != 0 && m.ItemType(a6) != 0 && m.ItemType(a7) != 0 && m.ItemType(a8) != 0)
+           // {
+            int[] arr = { m.ItemType(a1), m.ItemType(a2), m.ItemType(a3), m.ItemType(a4), m.ItemType(a5), m.ItemType(a6), m.ItemType(a7), m.ItemType(a8) };
+            if (Validate(arr) == true)
+            {
+                _RecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Name + " Weapon", arr);
+            }
+           // }
+          //  else
+            //{
+
+           // }
+
         }
     }
 }

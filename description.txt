@@ -1,13 +1,21 @@
 JumpStart is a mod in progress intended to make the game a little bit less tedious and annoying
 
 Currently it adds:
-     -A starter bag
-     -Calamity support for imkSushisMod loot swap tokens, ALL BOSSES
-     -Some Pre-Hardmode bosses drop Magic Storage components
-     -Some Pre-Hardmode bosses drop Gem bags.
+
+-A starter bag
+
+-Calamity support for imkSushisMod loot swap tokens, ALL BOSSES
+
+-Some Pre-Hardmode bosses drop Magic Storage components
+
+-Some Pre-Hardmode bosses drop Gem bags.
 
 Planned Features:
-     -More loot Swapping recipes for some other big content mods
-     -The ability to craft bars down into lower tiers, so that when you need chlorophyte Post-Yharon you don't need to go mining. (For a friend)
-     -maybe a few QoL NPCs
-     -What ever I feel like.
+
+-More loot Swapping recipes for some other big content mods (Spirit, Thorium, Elements Awoken, Sacred Tools, etc)
+
+-The ability to craft bars down into lower tiers from previous game stages (ex. Cosmolite -> Chlorophyte)
+     
+-maybe a few QoL NPCs
+
+-What ever I feel like.
