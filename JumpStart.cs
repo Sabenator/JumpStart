@@ -272,7 +272,7 @@ namespace JumpStart
 					RecipeGroup.RegisterGroup("JumpStart:Scarabeus", Scarabeus._RecipeGroup);
 					RecipeGroups.Add("Scarabeus");
 				}
-				/**
+				
 				//Moon Jelly Wizard
 				rg MoonJellyWizard = new rg(spiritMod, "Moon Jelly Wizard", "Moonshot", "Moonburst", "MoonjellySummonStaff", "JellynautBubble");
 				RecipeGroups.Remove("MoonJellyWizard");
@@ -290,7 +290,7 @@ namespace JumpStart
 					RecipeGroup.RegisterGroup("JumpStart:Vinewrath", VinewrathBane._RecipeGroup);
 					RecipeGroups.Add("Vinewrath");
 				}
-				**/
+				
 
 				//AncientAvian
 				rg AncientAvian = new rg(spiritMod, "Ancient Avian", "Talonginus", "SkeletalonStaff", "TalonBlade", "SoaringScapula", "TalonPiercer");
@@ -339,7 +339,7 @@ namespace JumpStart
 					spiritMod.ItemType("ShadowSphere")
 				});
 				RecipeGroup.RegisterGroup("JumpStart:Dusking", Dusking);
-				/**
+				
 				//Atlas
 				RecipeGroup Atlas = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Atlas Weapon", new int[] {
 					spiritMod.ItemType("Mountain"),
@@ -350,7 +350,7 @@ namespace JumpStart
 					spiritMod.ItemType("TitanboundBulwark")
 				});
 				RecipeGroup.RegisterGroup("JumpStart:Atlas", Atlas);
-				**/
+				
 				//Overseer
 				RecipeGroup Overseer = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Overseer Weapon", new int[] {
 					spiritMod.ItemType("EssenseTearer"),
@@ -448,7 +448,7 @@ namespace JumpStart
 					Scarabeus3.SetResult(spiritMod.ItemType("OrnateStaff"), 1);
 					Scarabeus3.AddRecipe();
 				}
-				/**
+				
 				if (RecipeGroups.Contains("MoonJellyWizard"))
 				{
 					//Moon Jelly Wizard
@@ -477,7 +477,7 @@ namespace JumpStart
 					MoonJellyWizard4.AddRecipeGroup("JumpStart:MoonJellyWizard", 1);
 					MoonJellyWizard4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
 					MoonJellyWizard4.AddTile(TileID.TinkerersWorkbench);
-					MoonJellyWizard4.SetResult(spiritMod.ItemType("JellynautBauble"), 1);
+					MoonJellyWizard4.SetResult(spiritMod.ItemType("JellynautBubble"), 1);
 					MoonJellyWizard4.AddRecipe();
 				}
 				
@@ -519,7 +519,7 @@ namespace JumpStart
 					VinewrathBane5.SetResult(spiritMod.ItemType("ReachKnife"), 1);
 					VinewrathBane5.AddRecipe();
 				}
-				**/
+				
 
 				if (RecipeGroups.Contains("AncientAvian"))
 				{
@@ -690,7 +690,7 @@ namespace JumpStart
 				Dusking4.AddTile(TileID.TinkerersWorkbench);
 				Dusking4.SetResult(spiritMod.ItemType("ShadowSphere"), 1);
 				Dusking4.AddRecipe();
-				/**
+				
 				//Atlas
 				ModRecipe Atlas1 = new ModRecipe(this);
 				Atlas1.AddRecipeGroup("JumpStart:Atlas", 1);
@@ -703,7 +703,7 @@ namespace JumpStart
 				Atlas2.AddRecipeGroup("JumpStart:Atlas", 1);
 				Atlas2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
 				Atlas2.AddTile(TileID.TinkerersWorkbench);
-				Atlas2.SetResult(spiritMod.ItemType("EarthShatter"), 1);
+				Atlas2.SetResult(spiritMod.ItemType("Earthshatter"), 1);
 				Atlas2.AddRecipe();
 
 				ModRecipe Atlas3 = new ModRecipe(this);
@@ -733,7 +733,7 @@ namespace JumpStart
 				Atlas6.AddTile(TileID.TinkerersWorkbench);
 				Atlas6.SetResult(spiritMod.ItemType("TitanboundBulwark"), 1);
 				Atlas6.AddRecipe();
-				**/
+				
 				//Overseer
 				ModRecipe Overseer1 = new ModRecipe(this);
 				Overseer1.AddRecipeGroup("JumpStart:Overseer", 1);
