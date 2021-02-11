@@ -10,9 +10,11 @@ Currently it adds:
 
 -Some Pre-Hardmode bosses drop Gem bags.
 
+-Partial Spirit Mod support. Currently missing Moonjelly Wizard, Vinewrath Bane, and Atlas.
+
 Planned Features:
 
--More loot Swapping recipes for some other big content mods (Spirit, Thorium, Elements Awoken, Sacred Tools, etc)
+-More loot Swapping recipes for: Spirit, Redemption, Thorium, Elements awoken, Shadows of Abbadon, Ancients Awakened (probably in this order)
 
 -The ability to craft bars down into lower tiers from previous game stages (ex. Cosmolite -> Chlorophyte)
      
