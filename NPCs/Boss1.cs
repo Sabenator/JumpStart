@@ -12,6 +12,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
 using JumpStart;
+using JumpStart.Projectiles;
 
 
 namespace JumpStart.NPCs
@@ -55,8 +56,8 @@ namespace JumpStart.NPCs
         private bool repeatLaser;
         private int count;
         private bool dash;
-        private int tpCoordX;
-        private int tpCoordY;
+        private float tpCoordX;
+        private float tpCoordY;
 
 
         public override void AI()
@@ -82,6 +83,7 @@ namespace JumpStart.NPCs
 
             if (!player.active || player.dead)
             {
+                npc.netUpdate = true;
                 npc.TargetClosest(false);
                 player = Main.player[npc.target];
 
@@ -99,20 +101,78 @@ namespace JumpStart.NPCs
             }
             else
             {
-                if (npc.life > npc.lifeMax * 0.75 && timer % 360 == 0) {
-                    int tpCoordX = Main.rand.Next(0, 480);
-                    int tpCoordY = Main.rand.Next(0, 1000);
-
-                    NPC.NewNPC(tpCoordX, tpCoordY, mod.NPCType("Boss1Marker"),0, 0, 0, 0);
                 
+                
+                
+                timer++;
+                if (timer == 240)
+                {
+                    int rng = Main.rand.Next(0, 7);
+                    if (rng == 0)
+                    {
+                        tpCoordX = player.position.X + 30;
+                        tpCoordY = player.position.Y;
+                    }
+                    else if (rng == 0)
+                    {
+                        tpCoordX = player.position.X + 21;
+                        tpCoordY = player.position.Y - 21;
+                    }
+                    else if (rng == 0)
+                    {
+                        tpCoordY = player.position.Y - 30;
+                        tpCoordX = player.position.X;
+                    }
+                    else if (rng == 0)
+                    {
+                        tpCoordX = player.position.X - 21;
+                        tpCoordY = player.position.Y - 21;
+                    }
+                    else if (rng == 0)
+                    {
+                        tpCoordX = player.position.X - 30;
+                        tpCoordY = player.position.Y;
+                    }
+                    else if (rng == 0)
+                    {
+                        tpCoordX = player.position.X - 21;
+                        tpCoordY = player.position.Y + 21;
+                    }
+                    else if (rng == 0)
+                    {
+                        tpCoordY = player.position.Y + 30;
+                        tpCoordX = player.position.X;
+                    }
+                    else
+                    {
+                        tpCoordX = player.position.X + 21;
+                        tpCoordY = player.position.Y + 21;
+                    }
+                    Projectile.NewProjectile(new Vector2(tpCoordX, tpCoordY), new Vector2(0, 0), mod.ProjectileType("Boss1Marker"), (int)(66 * expertScale), 5f, -1);
+                    npc.netUpdate = true;
+                }
+                else if (timer == 340)
+                {
+                    npc.position.X = new Vector2(tpCoordX, tpCoordY).X;
+                    npc.position.Y = new Vector2(tpCoordX, tpCoordY).Y;
+                    Dust.NewDust(npc.Center, npc.width, npc.height, 25, 0, 0, 150, default(Color), 0.7f);
+                    Dust.NewDust(npc.Center, npc.width, npc.height, 50, 0, 0, 150, default(Color), 0.7f);
+                    Dust.NewDust(npc.Center, npc.width, npc.height, 60, 0, 0, 150, default(Color), 0.7f);
+                    npc.netUpdate = true;
+                }
+                else if (timer == 460)
+                {
+                    Vector2 dir = new Vector2(32, 0);
+                    for (int i = 0; i < 8; i++)
+                    {
+                        Projectile.NewProjectile(npc.Center, dir.RotatedBy(MathHelper.ToRadians(i * 45)), mod.ProjectileType("Boss1Marker"), (int)(100 * expertScale), 5f, -1);
+                        dir = new Vector2(32, 0);
+                    }
+                    npc.netUpdate = true;
+                } else if(timer > 540){
+                    timer = 0;
                 }
             }
-
-
-
-
-
-            timer++;
             }
         }
     }

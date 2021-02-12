@@ -18,120 +18,105 @@ namespace JumpStart
         public bool valid = false;
         public RecipeGroup _RecipeGroup = null;
         
-        public bool Validate(int[] array) {
-            if (array.Contains(0) == false)
+        public bool Validate(int[] array, int a) {
+            if (array.Contains(a))
             {
-                return true;
+                return false;
             }
             else {
-                return false;
+                return true;
             }
         }
         public rg(Mod m, String Name, String a1, String a2)
         {
-            //if (m.ItemType(a1) != 0 && m.ItemType(a2) != 0)
-           // {
+
             int[] arr = { m.ItemType(a1), m.ItemType(a2) };
-            if (Validate(arr) == true)
+            if (Validate(arr, 0) == true)
             {
                 _RecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Name + " Weapon", arr);
             }
-           // }
-          //  else
-           // {
+            else {
+                _RecipeGroup = new RecipeGroup(() => "Recipe Group Error", new int[]{ItemID.IronBar });
+            }
 
-           // }
         }
         public rg(Mod m, String Name, String a1, String a2, String a3)
         {
-            //  if (m.ItemType(a1) != 0 && m.ItemType(a2) != 0 && m.ItemType(a3) != 0)
-            //   {
 
             int[] arr = { m.ItemType(a1), m.ItemType(a2), m.ItemType(a3)};
-            if (Validate(arr) == true)
+            if (Validate(arr, 0) == true)
             {
                 _RecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Name + " Weapon", arr);
             }
-           // }
-           // else
-           // {
-
-            //}
+            else
+            {
+                _RecipeGroup = new RecipeGroup(() => "Recipe Group Error", new int[] { ItemID.IronBar });
+            }
         }
         public rg(Mod m, String Name, String a1, String a2, String a3, String a4)
         {
-           // if (m.ItemType(a1) != 0 && m.ItemType(a2) != 0 && m.ItemType(a3) != 0 && m.ItemType(a4) != 0)
-           // {
+
             int[] arr = { m.ItemType(a1), m.ItemType(a2), m.ItemType(a3), m.ItemType(a4) };
-            if (Validate(arr) == true)
+            if (Validate(arr, 0) == true)
             {
                 _RecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Name + " Weapon", arr);
             }
-          //  }
-           // else
-         //   {
-
-          //  }
+            else
+            {
+                _RecipeGroup = new RecipeGroup(() => "Recipe Group Error", new int[] { ItemID.IronBar });
+            }
         }
         public rg(Mod m, String Name, String a1, String a2, String a3, String a4, String a5)
         {
-           // if (m.ItemType(a1) != 0 && m.ItemType(a2) != 0 && m.ItemType(a3) != 0 && m.ItemType(a4) != 0 && m.ItemType(a5) != 0)
-          //  {
+
             int[] arr = { m.ItemType(a1), m.ItemType(a2), m.ItemType(a3), m.ItemType(a4), m.ItemType(a5) };
-            if (Validate(arr) == true)
+            if (Validate(arr, 0) == true)
             {
                 _RecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Name + " Weapon", arr);
             }
-           // }
-          //  else
-          //  {
-
-          //  }
+            else
+            {
+                _RecipeGroup = new RecipeGroup(() => "Recipe Group Error", new int[] { ItemID.IronBar });
+            }
         }
         public rg(Mod m, String Name, String a1, String a2, String a3, String a4, String a5, String a6)
         {
-           // if (m.ItemType(a1) != 0 && m.ItemType(a2) != 0 && m.ItemType(a3) != 0 && m.ItemType(a4) != 0 && m.ItemType(a5) != 0 && m.ItemType(a6) != 0)
-          //  {
+
             int[] arr = { m.ItemType(a1), m.ItemType(a2), m.ItemType(a3), m.ItemType(a4), m.ItemType(a5), m.ItemType(a6) };
-            if (Validate(arr) == true)
+            if (Validate(arr, 0) == true)
             {
                 _RecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Name + " Weapon", arr);
             }
-           // }
-           // else
-           // {
-
-           // }
+            else
+            {
+                _RecipeGroup = new RecipeGroup(() => "Recipe Group Error", new int[] { ItemID.IronBar });
+            }
         }
         public rg(Mod m, String Name, String a1, String a2, String a3, String a4, String a5, String a6, String a7)
         {
-           // if (m.ItemType(a1) != 0 && m.ItemType(a2) != 0 && m.ItemType(a3) != 0 && m.ItemType(a4) != 0 && m.ItemType(a5) != 0 && m.ItemType(a6) != 0 && m.ItemType(a7) != 0)
-           // {
+
             int[] arr = { m.ItemType(a1), m.ItemType(a2), m.ItemType(a3), m.ItemType(a4), m.ItemType(a5), m.ItemType(a6), m.ItemType(a7) };
-            if (Validate(arr) == true)
+            if (Validate(arr, 0) == true)
             {
                 _RecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Name + " Weapon", arr);
             }
-            //}
-          //  else
-           // {
-
-            //}
+            else
+            {
+                _RecipeGroup = new RecipeGroup(() => "Recipe Group Error", new int[] { ItemID.IronBar });
+            }
         }
         public rg(Mod m, String Name, String a1, String a2, String a3, String a4, String a5, String a6, String a7, String a8)
         {
-           // if (m.ItemType(a1) != 0 && m.ItemType(a2) != 0 && m.ItemType(a3) != 0 && m.ItemType(a4) != 0 && m.ItemType(a5) != 0 && m.ItemType(a6) != 0 && m.ItemType(a7) != 0 && m.ItemType(a8) != 0)
-           // {
+
             int[] arr = { m.ItemType(a1), m.ItemType(a2), m.ItemType(a3), m.ItemType(a4), m.ItemType(a5), m.ItemType(a6), m.ItemType(a7), m.ItemType(a8) };
-            if (Validate(arr) == true)
+            if (Validate(arr, 0) == true)
             {
                 _RecipeGroup = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + Name + " Weapon", arr);
             }
-           // }
-          //  else
-            //{
-
-           // }
+            else
+            {
+                _RecipeGroup = new RecipeGroup(() => "Recipe Group Error", new int[] { ItemID.IronBar });
+            }
 
         }
     }

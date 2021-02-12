@@ -10,7 +10,7 @@ Currently it adds:
 
 -Some Pre-Hardmode bosses drop Gem bags.
 
--Full Spirit mod support, ALL BOSSES.
+-Full Spirit mod support, ALL BOSSES, and Event Bosses
 
 -Starting work on Redemption mod
 
