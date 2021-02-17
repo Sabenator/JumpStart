@@ -112,19 +112,65 @@ namespace JumpStart
         }
     }
     public class ItemCheck {
-        public int i;
+        public int b;
         public ItemCheck(int a) {
-            int i = a;
+            b = a;
         }
         public int Validate() {
+            int i = b;
             if (i == 0)
             {
                 return (ItemID.IronBar);
             }
             else
             {
-                return i;
+                return b;
             }
+        }
+    }
+    public class BossMethods {
+        public static void MoveToward(NPC npc, Vector2 playerTarget, float speed, float turnResistance)
+        {
+            Vector2 move = playerTarget - npc.Center;
+            float length = move.Length();
+            if (length > speed) {
+                move *= speed / length;
+            }
+            move = (npc.velocity * turnResistance + move) / (turnResistance + 1f);
+            length = move.Length();
+            if (length > speed) {
+                move *= speed / length;
+            }
+            npc.velocity = move;
+        }
+        public static void DashToward(NPC npc, Vector2 playerTarget, float speed)
+        {
+            Vector2 move = playerTarget - npc.Center;
+            if (move.Length() < 0.9f * speed) {
+            } else if (move.Length() > speed) 
+            { 
+                move *= speed / move.Length();
+            }
+            npc.velocity = move;
+        }
+        public static void ShootRing(int count, int type, float velocity, float kb, int damage, NPC npc) {
+            for (int i = 0; i < count; i++) {
+                Projectile.NewProjectile(npc.Center, new Vector2(velocity, 0).RotatedBy(MathHelper.ToRadians((360 / count) * i)), type, damage, kb);
+            }
+        }
+        public static void ShootRing(int count, int type, float velocity, float kb, int damage, NPC npc, int initRotation)
+        {
+            for (int i = 0; i < count; i++)
+            {
+                Projectile.NewProjectile(npc.Center, new Vector2(velocity, 0).RotatedBy(MathHelper.ToRadians(initRotation)).RotatedBy(MathHelper.ToRadians((360 / count) * i)), type, damage, kb);
+            }
+        }
+        public static void ShootAt(Player player, NPC npc, int type, float velocity, float kb, int damage, int inaccuracy) {
+            Vector2 angle = player.Center - npc.Center;
+            angle.Normalize();
+            int rotation = Main.rand.Next(-inaccuracy, inaccuracy);
+            angle.RotatedBy(MathHelper.ToRadians(rotation));
+            Projectile.NewProjectile(npc.Center, velocity * angle, type, damage, kb);
         }
     }
 }

@@ -479,289 +479,323 @@ namespace JumpStart
         public override void AddRecipes()
         {
 			if (redemptionMod != null && imkSushisMod != null) {
-				/**
 				
-					ModRecipe Thorn1 = new ModRecipe(this);
-					Thorn1.AddRecipeGroup("JumpStart:Thorn", 1);
-					Thorn1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					Thorn1.AddTile(TileID.TinkerersWorkbench);
-					Thorn1.SetResult((new ItemCheck(spiritMod.ItemType("CursedGrassSword"))).Validate(), 1);
-					Thorn1.AddRecipe();
-
-					ModRecipe Thorn2 = new ModRecipe(this);
-					Thorn2.AddRecipeGroup("JumpStart:Thorn", 1);
-					Thorn2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					Thorn2.AddTile(TileID.TinkerersWorkbench);
-					Thorn2.SetResult((new ItemCheck(spiritMod.ItemType("CursedThornBow"))).Validate(), 1);
-					Thorn2.AddRecipe();
-					
-					ModRecipe Thorn3 = new ModRecipe(this);
-					Thorn3.AddRecipeGroup("JumpStart:Thorn", 1);
-					Thorn3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					Thorn3.AddTile(TileID.TinkerersWorkbench);
-					Thorn3.SetResult((new ItemCheck(spiritMod.ItemType("RootTendril"))).Validate(), 1);
-					Thorn3.AddRecipe();
-					
-					ModRecipe Thorn4 = new ModRecipe(this);
-					Thorn4.AddRecipeGroup("JumpStart:Thorn", 1);
-					Thorn4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					Thorn4.AddTile(TileID.TinkerersWorkbench);
-					Thorn4.SetResult((new ItemCheck(spiritMod.ItemType("ThornSeedBag"))).Validate(), 1);
-					Thorn4.AddRecipe();
-
-					
-					ModRecipe Keeper1 = new ModRecipe(this);
-					Keeper1.AddRecipeGroup("JumpStart:Keeper", 1);
-					Keeper1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					Keeper1.AddTile(TileID.TinkerersWorkbench);
-					Keeper1.SetResult((new ItemCheck(spiritMod.ItemType("KeepersBow"))).Validate(), 1);
-					Keeper1.AddRecipe();
-					
-					ModRecipe Keeper2 = new ModRecipe(this);
-					Keeper2.AddRecipeGroup("JumpStart:Keeper", 1);
-					Keeper2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					Keeper2.AddTile(TileID.TinkerersWorkbench);
-					Keeper2.SetResult((new ItemCheck(spiritMod.ItemType("KeepersSummon"))).Validate(), 1);
-					Keeper2.AddRecipe();
-
-					ModRecipe Keeper3 = new ModRecipe(this);
-					Keeper3.AddRecipeGroup("JumpStart:Keeper", 1);
-					Keeper3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					Keeper3.AddTile(TileID.TinkerersWorkbench);
-					Keeper3.SetResult((new ItemCheck(spiritMod.ItemType("KeepersKnife"))).Validate(), 1);
-					Keeper3.AddRecipe();
-
-					ModRecipe Keeper4 = new ModRecipe(this);
-					Keeper4.AddRecipeGroup("JumpStart:Keeper", 1);
-					Keeper4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					Keeper4.AddTile(TileID.TinkerersWorkbench);
-					Keeper4.SetResult((new ItemCheck(spiritMod.ItemType("KeepersClaw"))).Validate(), 1);
-					Keeper4.AddRecipe();
-
-					ModRecipe Keeper5 = new ModRecipe(this);
-					Keeper5.AddRecipeGroup("JumpStart:Keeper", 1);
-					Keeper5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					Keeper5.AddTile(TileID.TinkerersWorkbench);
-					Keeper5.SetResult((new ItemCheck(spiritMod.ItemType("KeepersStaff"))).Validate(), 1);
-					Keeper5.AddRecipe();
-					
 				
-					ModRecipe SeedOfInfection1 = new ModRecipe(this);
-					SeedOfInfection1.AddRecipeGroup("JumpStart:SeedOfInfection", 1);
-					SeedOfInfection1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					SeedOfInfection1.AddTile(TileID.TinkerersWorkbench);
-					SeedOfInfection1.SetResult((new ItemCheck(spiritMod.ItemType("XenoCanister"))).Validate(), 1);
-					SeedOfInfection1.AddRecipe();
+				ModRecipe Thorn1 = new ModRecipe(this);
+				Thorn1.AddRecipeGroup("JumpStart:Thorn", 1);
+				Thorn1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Thorn1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Th1 = new ItemCheck(redemptionMod.ItemType("CursedGrassSword"));
+				Thorn1.SetResult(Th1.Validate(), 1);
+				Thorn1.AddRecipe();
+
+				ModRecipe Thorn2 = new ModRecipe(this);
+				Thorn2.AddRecipeGroup("JumpStart:Thorn", 1);
+				Thorn2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Thorn2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Th2 = new ItemCheck(redemptionMod.ItemType("CursedThornBow"));
+				Thorn2.SetResult(Th2.Validate(), 1);
+				Thorn2.AddRecipe();
 					
-					ModRecipe SeedOfInfection2 = new ModRecipe(this);
-					SeedOfInfection2.AddRecipeGroup("JumpStart:SeedOfInfection", 1);
-					SeedOfInfection2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					SeedOfInfection2.AddTile(TileID.TinkerersWorkbench);
-					SeedOfInfection2.SetResult((new ItemCheck(spiritMod.ItemType("XenomiteGlaive"))).Validate(), 1);
-					SeedOfInfection2.AddRecipe();
+				ModRecipe Thorn3 = new ModRecipe(this);
+				Thorn3.AddRecipeGroup("JumpStart:Thorn", 1);
+				Thorn3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Thorn3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Th3 = new ItemCheck(redemptionMod.ItemType("RootTendril"));
+				Thorn3.SetResult(Th3.Validate(), 1);
+				Thorn3.AddRecipe();
 					
-					ModRecipe SeedOfInfection3 = new ModRecipe(this);
-					SeedOfInfection3.AddRecipeGroup("JumpStart:SeedOfInfection", 1);
-					SeedOfInfection3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					SeedOfInfection3.AddTile(TileID.TinkerersWorkbench);
-					SeedOfInfection3.SetResult((new ItemCheck(spiritMod.ItemType("XenomiteYoyo"))).Validate(), 1);
-					SeedOfInfection3.AddRecipe();
+				ModRecipe Thorn4 = new ModRecipe(this);
+				Thorn4.AddRecipeGroup("JumpStart:Thorn", 1);
+				Thorn4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Thorn4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Th4 = new ItemCheck(redemptionMod.ItemType("ThornSeedBag"));
+				Thorn4.SetResult(Th4.Validate(), 1);
+				Thorn4.AddRecipe();
+
+					
+				ModRecipe Keeper1 = new ModRecipe(this);
+				Keeper1.AddRecipeGroup("JumpStart:Keeper", 1);
+				Keeper1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Keeper1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ke1 = new ItemCheck(redemptionMod.ItemType("KeepersBow"));
+				Keeper1.SetResult(Ke1.Validate(), 1);
+				Keeper1.AddRecipe();
+					
+				ModRecipe Keeper2 = new ModRecipe(this);
+				Keeper2.AddRecipeGroup("JumpStart:Keeper", 1);
+				Keeper2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Keeper2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ke2 = new ItemCheck(redemptionMod.ItemType("KeepersSummon"));
+				Keeper2.SetResult(Ke2.Validate(), 1);
+				Keeper2.AddRecipe();
+
+				ModRecipe Keeper3 = new ModRecipe(this);
+				Keeper3.AddRecipeGroup("JumpStart:Keeper", 1);
+				Keeper3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Keeper3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ke3 = new ItemCheck(redemptionMod.ItemType("KeepersKnife"));
+				Keeper3.SetResult(Ke3.Validate(), 1);
+				Keeper3.AddRecipe();
+
+				ModRecipe Keeper4 = new ModRecipe(this);
+				Keeper4.AddRecipeGroup("JumpStart:Keeper", 1);
+				Keeper4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Keeper4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ke4 = new ItemCheck(redemptionMod.ItemType("KeepersClaw"));
+				Keeper4.SetResult(Ke4.Validate(), 1);
+				Keeper4.AddRecipe();
+
+				ModRecipe Keeper5 = new ModRecipe(this);
+				Keeper5.AddRecipeGroup("JumpStart:Keeper", 1);
+				Keeper5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Keeper5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ke5 = new ItemCheck(redemptionMod.ItemType("KeepersStaff"));
+				Keeper5.SetResult(Ke5.Validate(), 1);
+				Keeper5.AddRecipe();
 					
 				
-					ModRecipe InfectedEye1 = new ModRecipe(this);
-					InfectedEye1.AddRecipeGroup("JumpStart:InfectedEye", 1);
-					InfectedEye1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					InfectedEye1.AddTile(TileID.TinkerersWorkbench);
-					InfectedEye1.SetResult((new ItemCheck(spiritMod.ItemType("TheInfectedEye"))).Validate(), 1);
-					InfectedEye1.AddRecipe();
-
-					ModRecipe InfectedEye2 = new ModRecipe(this);
-					InfectedEye2.AddRecipeGroup("JumpStart:InfectedEye", 1);
-					InfectedEye2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					InfectedEye2.AddTile(TileID.TinkerersWorkbench);
-					InfectedEye2.SetResult((new ItemCheck(spiritMod.ItemType("XenomiteStaff"))).Validate(), 1);
-					InfectedEye2.AddRecipe();
-
-					ModRecipe InfectedEye3 = new ModRecipe(this);
-					InfectedEye3.AddRecipeGroup("JumpStart:InfectedEye", 1);
-					InfectedEye3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					InfectedEye3.AddTile(TileID.TinkerersWorkbench);
-					InfectedEye3.SetResult((new ItemCheck(spiritMod.ItemType("InfectousJavelin"))).Validate(), 1);
-					InfectedEye3.AddRecipe();
+				ModRecipe SeedOfInfection1 = new ModRecipe(this);
+				SeedOfInfection1.AddRecipeGroup("JumpStart:SeedOfInfection", 1);
+				SeedOfInfection1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				SeedOfInfection1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Se1 = new ItemCheck(redemptionMod.ItemType("XenoCanister"));
+				SeedOfInfection1.SetResult(Se1.Validate(), 1);
+				SeedOfInfection1.AddRecipe();
+					
+				ModRecipe SeedOfInfection2 = new ModRecipe(this);
+				SeedOfInfection2.AddRecipeGroup("JumpStart:SeedOfInfection", 1);
+				SeedOfInfection2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				SeedOfInfection2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Se2 = new ItemCheck(redemptionMod.ItemType("XenomiteGlaive"));
+				SeedOfInfection2.SetResult(Se2.Validate(), 1);
+				SeedOfInfection2.AddRecipe();
+					
+				ModRecipe SeedOfInfection3 = new ModRecipe(this);
+				SeedOfInfection3.AddRecipeGroup("JumpStart:SeedOfInfection", 1);
+				SeedOfInfection3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				SeedOfInfection3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Se3 = new ItemCheck(redemptionMod.ItemType("XenomiteYoyo"));
+				SeedOfInfection3.SetResult(Se3.Validate(), 1);
+				SeedOfInfection3.AddRecipe();
+					
 				
-					ModRecipe KingSlayerIII1 = new ModRecipe(this);
-					KingSlayerIII1.AddRecipeGroup("JumpStart:KingSlayerIII", 1);
-					KingSlayerIII1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					KingSlayerIII1.AddTile(TileID.TinkerersWorkbench);
-					KingSlayerIII1.SetResult((new ItemCheck(spiritMod.ItemType("SlayerFlamethrower"))).Validate(), 1);
-					KingSlayerIII1.AddRecipe();
+				ModRecipe InfectedEye1 = new ModRecipe(this);
+				InfectedEye1.AddRecipeGroup("JumpStart:InfectedEye", 1);
+				InfectedEye1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				InfectedEye1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck In1 = new ItemCheck(redemptionMod.ItemType("TheInfectedEye"));
+				InfectedEye1.SetResult(In1.Validate(), 1);
+				InfectedEye1.AddRecipe();
 
-					ModRecipe KingSlayerIII2 = new ModRecipe(this);
-					KingSlayerIII2.AddRecipeGroup("JumpStart:KingSlayerIII", 1);
-					KingSlayerIII2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					KingSlayerIII2.AddTile(TileID.TinkerersWorkbench);
-					KingSlayerIII2.SetResult((new ItemCheck(spiritMod.ItemType("SlayerNanogun"))).Validate(), 1);
-					KingSlayerIII2.AddRecipe();
+				ModRecipe InfectedEye2 = new ModRecipe(this);
+				InfectedEye2.AddRecipeGroup("JumpStart:InfectedEye", 1);
+				InfectedEye2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				InfectedEye2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck In2 = new ItemCheck(redemptionMod.ItemType("XenomiteStaff"));
+				InfectedEye2.SetResult(In2.Validate(), 1);
+				InfectedEye2.AddRecipe();
 
-					ModRecipe KingSlayerIII3 = new ModRecipe(this);
-					KingSlayerIII3.AddRecipeGroup("JumpStart:KingSlayerIII", 1);
-					KingSlayerIII3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					KingSlayerIII3.AddTile(TileID.TinkerersWorkbench);
-					KingSlayerIII3.SetResult((new ItemCheck(spiritMod.ItemType("SlayerFist"))).Validate(), 1);
-					KingSlayerIII3.AddRecipe();
-
-					ModRecipe KingSlayerIII4 = new ModRecipe(this);
-					KingSlayerIII4.AddRecipeGroup("JumpStart:KingSlayerIII", 1);
-					KingSlayerIII4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					KingSlayerIII4.AddTile(TileID.TinkerersWorkbench);
-					KingSlayerIII4.SetResult((new ItemCheck(spiritMod.ItemType("SlayerGun"))).Validate(), 1);
-					KingSlayerIII4.AddRecipe();
+				ModRecipe InfectedEye3 = new ModRecipe(this);
+				InfectedEye3.AddRecipeGroup("JumpStart:InfectedEye", 1);
+				InfectedEye3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				InfectedEye3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck In3 = new ItemCheck(redemptionMod.ItemType("InfectousJavelin"));
+				InfectedEye3.SetResult(In3.Validate(), 1);
+				InfectedEye3.AddRecipe();
 				
-					ModRecipe VlitchCleaver1 = new ModRecipe(this);
-					VlitchCleaver1.AddRecipeGroup("JumpStart:VlitchCleaver", 1);
-					VlitchCleaver1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					VlitchCleaver1.AddTile(TileID.TinkerersWorkbench);
-					VlitchCleaver1.SetResult((new ItemCheck(spiritMod.ItemType("GirusLance"))).Validate(), 1);
-					VlitchCleaver1.AddRecipe();
+				ModRecipe KingSlayerIII1 = new ModRecipe(this);
+				KingSlayerIII1.AddRecipeGroup("JumpStart:KingSlayerIII", 1);
+				KingSlayerIII1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				KingSlayerIII1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ki1 = new ItemCheck(redemptionMod.ItemType("SlayerFlamethrower"));
+				KingSlayerIII1.SetResult(Ki1.Validate(), 1);
+				KingSlayerIII1.AddRecipe();
 
-					ModRecipe VlitchCleaver2 = new ModRecipe(this);
-					VlitchCleaver2.AddRecipeGroup("JumpStart:VlitchCleaver", 1);
-					VlitchCleaver2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					VlitchCleaver2.AddTile(TileID.TinkerersWorkbench);
-					VlitchCleaver2.SetResult((new ItemCheck(spiritMod.ItemType("GirusDagger"))).Validate(), 1);
-					VlitchCleaver2.AddRecipe();
+				ModRecipe KingSlayerIII2 = new ModRecipe(this);
+				KingSlayerIII2.AddRecipeGroup("JumpStart:KingSlayerIII", 1);
+				KingSlayerIII2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				KingSlayerIII2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ki2 = new ItemCheck(redemptionMod.ItemType("SlayerNanogun"));
+				KingSlayerIII2.SetResult(Ki2.Validate(), 1);
+				KingSlayerIII2.AddRecipe();
 
-					ModRecipe VlitchCleaver3 = new ModRecipe(this);
-					VlitchCleaver3.AddRecipeGroup("JumpStart:VlitchCleaver", 1);
-					VlitchCleaver3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					VlitchCleaver3.AddTile(TileID.TinkerersWorkbench);
-					VlitchCleaver3.SetResult((new ItemCheck(spiritMod.ItemType("GirusDaggerThrown"))).Validate(), 1);
-					VlitchCleaver3.AddRecipe();
+				ModRecipe KingSlayerIII3 = new ModRecipe(this);
+				KingSlayerIII3.AddRecipeGroup("JumpStart:KingSlayerIII", 1);
+				KingSlayerIII3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				KingSlayerIII3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ki3 = new ItemCheck(redemptionMod.ItemType("SlayerFist"));
+				KingSlayerIII3.SetResult(Ki3.Validate(), 1);
+				KingSlayerIII3.AddRecipe();
+
+				ModRecipe KingSlayerIII4 = new ModRecipe(this);
+				KingSlayerIII4.AddRecipeGroup("JumpStart:KingSlayerIII", 1);
+				KingSlayerIII4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				KingSlayerIII4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ki4 = new ItemCheck(redemptionMod.ItemType("SlayerGun"));
+				KingSlayerIII4.SetResult(Ki4.Validate(), 1);
+				KingSlayerIII4.AddRecipe();
 				
-					ModRecipe VlitchGigapede1 = new ModRecipe(this);
-					VlitchGigapede1.AddRecipeGroup("JumpStart:VlitchGigapede", 1);
-					VlitchGigapede1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					VlitchGigapede1.AddTile(TileID.TinkerersWorkbench);
-					VlitchGigapede1.SetResult((new ItemCheck(spiritMod.ItemType("CorruptedDoubleRifle"))).Validate(), 1);
-					VlitchGigapede1.AddRecipe();
+				ModRecipe VlitchCleaver1 = new ModRecipe(this);
+				VlitchCleaver1.AddRecipeGroup("JumpStart:VlitchCleaver", 1);
+				VlitchCleaver1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				VlitchCleaver1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Vl1 = new ItemCheck(redemptionMod.ItemType("GirusLance"));
+				VlitchCleaver1.SetResult(Vl1.Validate(), 1);
+				VlitchCleaver1.AddRecipe();
 
-					ModRecipe VlitchGigapede2 = new ModRecipe(this);
-					VlitchGigapede2.AddRecipeGroup("JumpStart:VlitchGigapede", 1);
-					VlitchGigapede2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-					VlitchGigapede2.AddTile(TileID.TinkerersWorkbench);
-					VlitchGigapede2.SetResult((new ItemCheck(spiritMod.ItemType("CorruptedRocketLauncher"))).Validate(), 1);
-					VlitchGigapede2.AddRecipe();
+				ModRecipe VlitchCleaver2 = new ModRecipe(this);
+				VlitchCleaver2.AddRecipeGroup("JumpStart:VlitchCleaver", 1);
+				VlitchCleaver2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				VlitchCleaver2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Vl2 = new ItemCheck(redemptionMod.ItemType("GirusDagger"));
+				VlitchCleaver2.SetResult(Vl2.Validate(), 1);
+				VlitchCleaver2.AddRecipe();
+
+				ModRecipe VlitchCleaver3 = new ModRecipe(this);
+				VlitchCleaver3.AddRecipeGroup("JumpStart:VlitchCleaver", 1);
+				VlitchCleaver3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				VlitchCleaver3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Vl3 = new ItemCheck(redemptionMod.ItemType("GirusDaggerThrown"));
+				VlitchCleaver3.SetResult(Vl3.Validate(), 1);
+				VlitchCleaver3.AddRecipe();
 				
-					ModRecipe OmegaObliterator1 = new ModRecipe(this);
-					OmegaObliterator1.AddRecipeGroup("JumpStart:OmegaObliterator", 1);
-					OmegaObliterator1.AddIngredient(imkSushisMod.ItemType("SwapToken"));
-					OmegaObliterator1.AddTile(TileID.TinkerersWorkbench);
-					OmegaObliterator1.SetResult((new ItemCheck(spiritMod.ItemType("PlasmaJawser"))).Validate(), 1);
-					OmegaObliterator1.AddRecipe();
+				ModRecipe VlitchGigapede1 = new ModRecipe(this);
+				VlitchGigapede1.AddRecipeGroup("JumpStart:VlitchGigapede", 1);
+				VlitchGigapede1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				VlitchGigapede1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Vl4 = new ItemCheck(redemptionMod.ItemType("CorruptedDoubleRifle"));
+				VlitchGigapede1.SetResult(Vl4.Validate(), 1);
+				VlitchGigapede1.AddRecipe();
 
-					ModRecipe OmegaObliterator2 = new ModRecipe(this);
-					OmegaObliterator2.AddRecipeGroup("JumpStart:OmegaObliterator", 1);
-					OmegaObliterator2.AddIngredient(imkSushisMod.ItemType("SwapToken"));
-					OmegaObliterator2.AddTile(TileID.TinkerersWorkbench);
-					OmegaObliterator2.SetResult((new ItemCheck(spiritMod.ItemType("OmegaClaw"))).Validate(), 1);
-					OmegaObliterator2.AddRecipe();
-
-					ModRecipe OmegaObliterator3 = new ModRecipe(this);
-					OmegaObliterator3.AddRecipeGroup("JumpStart:OmegaObliterator", 1);
-					OmegaObliterator3.AddIngredient(imkSushisMod.ItemType("SwapToken"));
-					OmegaObliterator3.AddTile(TileID.TinkerersWorkbench);
-					OmegaObliterator3.SetResult((new ItemCheck(spiritMod.ItemType("GloopContainer"))).Validate(), 1);
-					OmegaObliterator3.AddRecipe();
+				ModRecipe VlitchGigapede2 = new ModRecipe(this);
+				VlitchGigapede2.AddRecipeGroup("JumpStart:VlitchGigapede", 1);
+				VlitchGigapede2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				VlitchGigapede2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Vl5 = new ItemCheck(redemptionMod.ItemType("CorruptedRocketLauncher"));
+				VlitchGigapede2.SetResult(Vl5.Validate(), 1);
+				VlitchGigapede2.AddRecipe();
 				
-					ModRecipe PatientZero1 = new ModRecipe(this);
-					PatientZero1.AddRecipeGroup("JumpStart:PatientZero", 1);
-					PatientZero1.AddIngredient(imkSushisMod.ItemType("SwapToken"));
-					PatientZero1.AddTile(TileID.TinkerersWorkbench);
-					PatientZero1.SetResult((new ItemCheck(spiritMod.ItemType("PZGauntlet"))).Validate(), 1);
-					PatientZero1.AddRecipe();
+				ModRecipe OmegaObliterator1 = new ModRecipe(this);
+				OmegaObliterator1.AddRecipeGroup("JumpStart:OmegaObliterator", 1);
+				OmegaObliterator1.AddIngredient(imkSushisMod.ItemType("SwapToken"));
+				OmegaObliterator1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Om1 = new ItemCheck(redemptionMod.ItemType("PlasmaJawser"));
+				OmegaObliterator1.SetResult(Om1.Validate(), 1);
+				OmegaObliterator1.AddRecipe();
 
-					ModRecipe PatientZero2 = new ModRecipe(this);
-					PatientZero2.AddRecipeGroup("JumpStart:PatientZero", 1);
-					PatientZero2.AddIngredient(imkSushisMod.ItemType("SwapToken"));
-					PatientZero2.AddTile(TileID.TinkerersWorkbench);
-					PatientZero2.SetResult((new ItemCheck(spiritMod.ItemType("SwarmerGun")).Validate()), 1);
-					PatientZero2.AddRecipe();
+				ModRecipe OmegaObliterator2 = new ModRecipe(this);
+				OmegaObliterator2.AddRecipeGroup("JumpStart:OmegaObliterator", 1);
+				OmegaObliterator2.AddIngredient(imkSushisMod.ItemType("SwapToken"));
+				OmegaObliterator2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Om2 = new ItemCheck(redemptionMod.ItemType("OmegaClaw"));
+				OmegaObliterator2.SetResult(Om2.Validate(), 1);
+				OmegaObliterator2.AddRecipe();
 
-					ModRecipe PatientZero3 = new ModRecipe(this);
-					PatientZero3.AddRecipeGroup("JumpStart:PatientZero", 1);
-					PatientZero3.AddIngredient(imkSushisMod.ItemType("SwapToken"));
-					PatientZero3.AddTile(TileID.TinkerersWorkbench);
-					PatientZero3.SetResult((new ItemCheck(spiritMod.ItemType("XeniumSaber"))).Validate(), 1);
-					PatientZero3.AddRecipe();
+				ModRecipe OmegaObliterator3 = new ModRecipe(this);
+				OmegaObliterator3.AddRecipeGroup("JumpStart:OmegaObliterator", 1);
+				OmegaObliterator3.AddIngredient(imkSushisMod.ItemType("SwapToken"));
+				OmegaObliterator3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Om3 = new ItemCheck(redemptionMod.ItemType("GloopContainer"));
+				OmegaObliterator3.SetResult(Om3.Validate(), 1);
+				OmegaObliterator3.AddRecipe();
 				
-					ModRecipe AncientDeityDuo1 = new ModRecipe(this);
-					AncientDeityDuo1.AddRecipeGroup("JumpStart:AncientDeityDuo", 1);
-					AncientDeityDuo1.AddIngredient(imkSushisMod.ItemType("SwapToken"));
-					AncientDeityDuo1.AddTile(TileID.TinkerersWorkbench);
-					AncientDeityDuo1.SetResult((new ItemCheck(spiritMod.ItemType("CursedThornFlail"))).Validate(), 1);
-					AncientDeityDuo1.AddRecipe();
+				ModRecipe PatientZero1 = new ModRecipe(this);
+				PatientZero1.AddRecipeGroup("JumpStart:PatientZero", 1);
+				PatientZero1.AddIngredient(imkSushisMod.ItemType("SwapToken"));
+				PatientZero1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Pa1 = new ItemCheck(redemptionMod.ItemType("PZGauntlet"));
+				PatientZero1.SetResult(Pa1.Validate(), 1);
+				PatientZero1.AddRecipe();
 
-					ModRecipe AncientDeityDuo2 = new ModRecipe(this);
-					AncientDeityDuo2.AddRecipeGroup("JumpStart:AncientDeityDuo", 1);
-					AncientDeityDuo2.AddIngredient(imkSushisMod.ItemType("SwapToken"));
-					AncientDeityDuo2.AddTile(TileID.TinkerersWorkbench);
-					AncientDeityDuo2.SetResult((new ItemCheck(spiritMod.ItemType("CursedThornBow2"))).Validate(), 1);
-					AncientDeityDuo2.AddRecipe();
+				ModRecipe PatientZero2 = new ModRecipe(this);
+				PatientZero2.AddRecipeGroup("JumpStart:PatientZero", 1);
+				PatientZero2.AddIngredient(imkSushisMod.ItemType("SwapToken"));
+				PatientZero2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Pa2 = new ItemCheck(redemptionMod.ItemType("SwarmerGun"));
+				PatientZero2.SetResult(Pa2.Validate(), 1);
+				PatientZero2.AddRecipe();
 
-					ModRecipe AncientDeityDuo3 = new ModRecipe(this);
-					AncientDeityDuo3.AddRecipeGroup("JumpStart:AncientDeityDuo", 1);
-					AncientDeityDuo3.AddIngredient(imkSushisMod.ItemType("SwapToken"));
-					AncientDeityDuo3.AddTile(TileID.TinkerersWorkbench);
-					AncientDeityDuo3.SetResult((new ItemCheck(spiritMod.ItemType("EaglecrestGlove"))).Validate(), 1);
-					AncientDeityDuo3.AddRecipe();
+				ModRecipe PatientZero3 = new ModRecipe(this);
+				PatientZero3.AddRecipeGroup("JumpStart:PatientZero", 1);
+				PatientZero3.AddIngredient(imkSushisMod.ItemType("SwapToken"));
+				PatientZero3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Pa3 = new ItemCheck(redemptionMod.ItemType("XeniumSaber"));
+				PatientZero3.SetResult(Pa3.Validate(), 1);
+				PatientZero3.AddRecipe();
+				
+				ModRecipe AncientDeityDuo1 = new ModRecipe(this);
+				AncientDeityDuo1.AddRecipeGroup("JumpStart:AncientDeityDuo", 1);
+				AncientDeityDuo1.AddIngredient(imkSushisMod.ItemType("SwapToken"));
+				AncientDeityDuo1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck An1 = new ItemCheck(redemptionMod.ItemType("CursedThornFlail"));
+				AncientDeityDuo1.SetResult(An1.Validate(), 1);
+				AncientDeityDuo1.AddRecipe();
 
-					ModRecipe AncientDeityDuo4 = new ModRecipe(this);
-					AncientDeityDuo4.AddRecipeGroup("JumpStart:AncientDeityDuo", 1);
-					AncientDeityDuo4.AddIngredient(imkSushisMod.ItemType("SwapToken"));
-					AncientDeityDuo4.AddTile(TileID.TinkerersWorkbench);
-					AncientDeityDuo4.SetResult((new ItemCheck(spiritMod.ItemType("StonePuppet"))).Validate(), 1);
-					AncientDeityDuo4.AddRecipe();
+				ModRecipe AncientDeityDuo2 = new ModRecipe(this);
+				AncientDeityDuo2.AddRecipeGroup("JumpStart:AncientDeityDuo", 1);
+				AncientDeityDuo2.AddIngredient(imkSushisMod.ItemType("SwapToken"));
+				AncientDeityDuo2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck An2 = new ItemCheck(redemptionMod.ItemType("CursedThornBow2"));
+				AncientDeityDuo2.SetResult(An2.Validate(), 1);
+				AncientDeityDuo2.AddRecipe();
 
-					ModRecipe AncientDeityDuo5 = new ModRecipe(this);
-					AncientDeityDuo5.AddRecipeGroup("JumpStart:AncientDeityDuo", 1);
-					AncientDeityDuo5.AddIngredient(imkSushisMod.ItemType("SwapToken"));
-					AncientDeityDuo5.AddTile(TileID.TinkerersWorkbench);
-					AncientDeityDuo5.SetResult((new ItemCheck(spiritMod.ItemType("AncientPowerStave"))).Validate(), 1);
-					AncientDeityDuo5.AddRecipe();
+				ModRecipe AncientDeityDuo3 = new ModRecipe(this);
+				AncientDeityDuo3.AddRecipeGroup("JumpStart:AncientDeityDuo", 1);
+				AncientDeityDuo3.AddIngredient(imkSushisMod.ItemType("SwapToken"));
+				AncientDeityDuo3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck An3 = new ItemCheck(redemptionMod.ItemType("EaglecrestGlove"));
+				AncientDeityDuo3.SetResult(An3.Validate(), 1);
+				AncientDeityDuo3.AddRecipe();
+
+				ModRecipe AncientDeityDuo4 = new ModRecipe(this);
+				AncientDeityDuo4.AddRecipeGroup("JumpStart:AncientDeityDuo", 1);
+				AncientDeityDuo4.AddIngredient(imkSushisMod.ItemType("SwapToken"));
+				AncientDeityDuo4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck An4 = new ItemCheck(redemptionMod.ItemType("StonePuppet"));
+				AncientDeityDuo4.SetResult(An4.Validate(), 1);
+				AncientDeityDuo4.AddRecipe();
+
+				ModRecipe AncientDeityDuo5 = new ModRecipe(this);
+				AncientDeityDuo5.AddRecipeGroup("JumpStart:AncientDeityDuo", 1);
+				AncientDeityDuo5.AddIngredient(imkSushisMod.ItemType("SwapToken"));
+				AncientDeityDuo5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck An5 = new ItemCheck(redemptionMod.ItemType("AncientPowerStave"));
+				AncientDeityDuo5.SetResult(An5.Validate(), 1);
+				AncientDeityDuo5.AddRecipe();
 				
 		
-					ModRecipe Nebuleus1 = new ModRecipe(this);
-					Nebuleus1.AddRecipeGroup("JumpStart:Nebuleus", 1);
-					Nebuleus1.AddIngredient(imkSushisMod.ItemType("SwapToken"));
-					Nebuleus1.AddTile(TileID.TinkerersWorkbench);
-					Nebuleus1.SetResult((new ItemCheck(spiritMod.ItemType("CosmosChainWeapon"))).Validate(), 1);
-					Nebuleus1.AddRecipe();
+				ModRecipe Nebuleus1 = new ModRecipe(this);
+				Nebuleus1.AddRecipeGroup("JumpStart:Nebuleus", 1);
+				Nebuleus1.AddIngredient(imkSushisMod.ItemType("SwapToken"));
+				Nebuleus1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ne1 = new ItemCheck(redemptionMod.ItemType("CosmosChainWeapon"));
+				Nebuleus1.SetResult(Ne1.Validate(), 1);
+				Nebuleus1.AddRecipe();
 
-					ModRecipe Nebuleus2 = new ModRecipe(this);
-					Nebuleus2.AddRecipeGroup("JumpStart:Nebuleus", 1);
-					Nebuleus2.AddIngredient(imkSushisMod.ItemType("SwapToken"));
-					Nebuleus2.AddTile(TileID.TinkerersWorkbench);
-					Nebuleus2.SetResult((new ItemCheck(spiritMod.ItemType("FreedomStarN"))).Validate(), 1);
-					Nebuleus2.AddRecipe();
+				ModRecipe Nebuleus2 = new ModRecipe(this);
+				Nebuleus2.AddRecipeGroup("JumpStart:Nebuleus", 1);
+				Nebuleus2.AddIngredient(imkSushisMod.ItemType("SwapToken"));
+				Nebuleus2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ne2 = new ItemCheck(redemptionMod.ItemType("FreedomStarN"));
+				Nebuleus2.SetResult(Ne2.Validate(), 1);
+				Nebuleus2.AddRecipe();
 
-					ModRecipe Nebuleus3 = new ModRecipe(this);
-					Nebuleus3.AddRecipeGroup("JumpStart:Nebuleus", 1);
-					Nebuleus3.AddIngredient(imkSushisMod.ItemType("SwapToken"));
-					Nebuleus3.AddTile(TileID.TinkerersWorkbench);
-					Nebuleus3.SetResult(new ItemCheck((spiritMod.ItemType("StarfruitSeedbag"))).Validate(), 1);
-					Nebuleus3.AddRecipe();
+				ModRecipe Nebuleus3 = new ModRecipe(this);
+				Nebuleus3.AddRecipeGroup("JumpStart:Nebuleus", 1);
+				Nebuleus3.AddIngredient(imkSushisMod.ItemType("SwapToken"));
+				Nebuleus3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ne3 = new ItemCheck(redemptionMod.ItemType("StarfruitSeedbag"));
+				Nebuleus3.SetResult(Ne3.Validate(), 1);
+				Nebuleus3.AddRecipe();
 
-					ModRecipe Nebuleus4 = new ModRecipe(this);
-					Nebuleus4.AddRecipeGroup("JumpStart:Nebuleus", 1);
-					Nebuleus4.AddIngredient(imkSushisMod.ItemType("SwapToken"));
-					Nebuleus4.AddTile(TileID.TinkerersWorkbench);
-					Nebuleus4.SetResult(new ItemCheck((spiritMod.ItemType("ConstellationsBook"))).Validate(), 1);
-					Nebuleus4.AddRecipe();
-			**/
-				
-				
-
-
+				ModRecipe Nebuleus4 = new ModRecipe(this);
+				Nebuleus4.AddRecipeGroup("JumpStart:Nebuleus", 1);
+				Nebuleus4.AddIngredient(imkSushisMod.ItemType("SwapToken"));
+				Nebuleus4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ne4 = new ItemCheck(redemptionMod.ItemType("ConstellationsBook"));
+				Nebuleus4.SetResult(Ne4.Validate(), 1);
+				Nebuleus4.AddRecipe();
 			}
 
 			if (spiritMod != null && imkSushisMod != null) {

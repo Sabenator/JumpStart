@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Collections.Generic;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
+using JumpStart;
+using System;
 
 namespace AllTheMods.Items
 {
@@ -18,37 +16,41 @@ namespace AllTheMods.Items
 		{
 			if (context == "bossBag" && arg == ItemID.KingSlimeBossBag && magicStorage != null)
 			{
-				int a = Main.rand.Next(6);
-				player.QuickSpawnItem(magicStorage.ItemType("StorageUnit"), Main.rand.Next(4, 12));
-				player.QuickSpawnItem(magicStorage.ItemType("StorageHeart"), 1);
-				if (a == 0)
+				if (NPC.downedSlimeKing == false)
 				{
-					player.QuickSpawnItem(magicStorage.ItemType("CraftingAccess"), 1);
-				}
-				else if (a == 1)
-				{
-					player.QuickSpawnItem(magicStorage.ItemType("StorageAccess"), 1);
-				}
-				else if (a == 2)
-				{
-					player.QuickSpawnItem(magicStorage.ItemType("CraftingAccess"), 1);
-					player.QuickSpawnItem(magicStorage.ItemType("StorageAccess"), 1);
-				}
-				else if (a == 3)
-				{
-					player.QuickSpawnItem(magicStorage.ItemType("CraftingAccess"), 1);
-					player.QuickSpawnItem(magicStorage.ItemType("StorageAccess"), 1);
-					player.QuickSpawnItem(magicStorage.ItemType("StorageUnit"), Main.rand.Next(2, 6));
-				}
-				else
-				{
-					player.QuickSpawnItem(mod.ItemType("GemLootBag"));
-					player.QuickSpawnItem(magicStorage.ItemType("StorageComponent"), Main.rand.Next(4, 8));
+					int a = Main.rand.Next(6);
+					player.QuickSpawnItem(magicStorage.ItemType("StorageUnit"), Main.rand.Next(4, 12));
+					player.QuickSpawnItem(magicStorage.ItemType("StorageHeart"), 1);
+					if (a == 0)
+					{
+						player.QuickSpawnItem(magicStorage.ItemType("CraftingAccess"), 1);
+					}
+					else if (a == 1)
+					{
+						player.QuickSpawnItem(magicStorage.ItemType("StorageAccess"), 1);
+					}
+					else if (a == 2)
+					{
+						player.QuickSpawnItem(magicStorage.ItemType("CraftingAccess"), 1);
+						player.QuickSpawnItem(magicStorage.ItemType("StorageAccess"), 1);
+					}
+					else if (a == 3)
+					{
+						player.QuickSpawnItem(magicStorage.ItemType("CraftingAccess"), 1);
+						player.QuickSpawnItem(magicStorage.ItemType("StorageAccess"), 1);
+						player.QuickSpawnItem(magicStorage.ItemType("StorageUnit"), Main.rand.Next(2, 6));
+					}
+					else
+					{
+						player.QuickSpawnItem(mod.ItemType("GemLootBag"));
+						player.QuickSpawnItem(magicStorage.ItemType("StorageComponent"), Main.rand.Next(4, 8));
+					}
 				}
 
 			}
 			if (context == "bossBag" && arg == ItemID.EyeOfCthulhuBossBag && magicStorage != null)
 			{
+				if (NPC.downedBoss1 == false) { }
 				player.QuickSpawnItem(mod.ItemType("GemLootBag"));
 				if (WorldGen.crimson) {
 					player.QuickSpawnItem(magicStorage.ItemType("UpgradeCrimtane"), Main.rand.Next(4, 9));

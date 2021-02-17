@@ -29,13 +29,13 @@ namespace JumpStart.NPCs
             npc.HitSound = SoundID.NPCHit1;
             npc.DeathSound = SoundID.NPCDeath29;
             npc.aiStyle = -1;
-            npc.lifeMax = 80000;
-            npc.damage = 125;
-            npc.defense = 60;
+            npc.lifeMax = 250000;
+            npc.damage = 200;
+            npc.defense = 80;
             npc.knockBackResist = 0f;
             npc.boss = true;
-            npc.width = 80;
-            npc.height = 80;
+            npc.width = 64;
+            npc.height = 64;
             npc.lavaImmune = true;
             npc.noGravity = true;
             npc.noTileCollide = true;
@@ -43,137 +43,145 @@ namespace JumpStart.NPCs
         }
         public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
         {
-            npc.lifeMax = (int)((npc.lifeMax * expertScale) * (1 + (numPlayers * 0.5)));
-            npc.damage = (int)(npc.damage * 0.5f);
+            npc.lifeMax = (int)(npc.lifeMax + 100000) + ((numPlayers - 1) * 50000);
+            npc.damage = (int)(npc.damage * 0.4f);
         }
-        private int timer = 0;
-        private int attackDelay = 60;
-        private bool run = false;
-        private int attackcd;
-        private int cdscale;
-        private float expertScale = 1f;
-        private int sel;
-        private bool repeatLaser;
-        private int count;
-        private bool dash;
-        private float tpCoordX;
-        private float tpCoordY;
+
+        public bool stunned = false;
+        public int stunCoolDown = 0;
+        public int stunCoolDownMax = Main.expertMode ? 60 : 100;
+        public bool attackSequence1 = false;
+        public bool attackSequence2 = false;
+        public bool attackSequence3 = false;
+        public int ai = 0;
+        public bool dash = false;
+        public Vector2 target;
+        public Vector2 start;
+        public int dashCounter = 0;
+        public Vector2 targetFixed;
+        public int chaseTimer = 0;
+        public bool right = false;
+
 
 
         public override void AI()
         {
-            
-            if (run == false)
-            {
-                if (Main.expertMode)
-                {
-                    cdscale = 50;
-                    expertScale = 1.5f;
-                }
-                else
-                {
-                    cdscale = 110;
-                }
-                attackcd = cdscale;
-                run = true;
-            }
             npc.TargetClosest(true);
             Player player = Main.player[npc.target];
 
-
             if (!player.active || player.dead)
             {
-                npc.netUpdate = true;
                 npc.TargetClosest(false);
                 player = Main.player[npc.target];
 
                 if (!player.active || player.dead)
                 {
-                    npc.noTileCollide = true;
                     npc.velocity = new Vector2(0f, 10f);
-
                     if (npc.timeLeft > 10)
                     {
                         npc.timeLeft = 10;
                     }
                     return;
                 }
+                npc.netUpdate = true;
             }
-            else
-            {
-                
-                
-                
-                timer++;
-                if (timer == 240)
+            else {
+                target = player.Center;
+                ai++;
+
+                if (npc.life > (Main.expertMode ? npc.lifeMax * 0.9f : npc.lifeMax * 0.8f))
                 {
-                    int rng = Main.rand.Next(0, 7);
-                    if (rng == 0)
+                    if (ai % 180 == 0)
                     {
-                        tpCoordX = player.position.X + 30;
-                        tpCoordY = player.position.Y;
+                        dash = true;
+                        targetFixed = player.Center;
+                        start = npc.Center;
+                        dashCounter = 0;
                     }
-                    else if (rng == 0)
+                    if (dash == true)
                     {
-                        tpCoordX = player.position.X + 21;
-                        tpCoordY = player.position.Y - 21;
+                        dashCounter++;
+                        BossMethods.DashToward(npc, targetFixed, Main.expertMode ? 30f : 20f);
+                        if (dashCounter > 90)
+                        {
+                            dash = false;
+                        }
+
                     }
-                    else if (rng == 0)
+                    else {
+                        BossMethods.MoveToward(npc, target, Main.expertMode ? 12f : 8f, 30f);
+                    }
+                    int randRotation = Main.rand.Next(0, 45);
+                    if ((ai + 90) % 180 == 0)
                     {
-                        tpCoordY = player.position.Y - 30;
-                        tpCoordX = player.position.X;
+                        BossMethods.ShootRing(Main.expertMode ? 12 : 8, ProjectileID.DeathLaser, 8f, 5f, npc.damage / 5, npc, randRotation);
                     }
-                    else if (rng == 0)
+                    else if ((ai + 120) % 180 == 0)
                     {
-                        tpCoordX = player.position.X - 21;
-                        tpCoordY = player.position.Y - 21;
+                        BossMethods.ShootRing(Main.expertMode ? 12 : 8, ProjectileID.DeathLaser, 8f, 5f, npc.damage / 5, npc, randRotation);
                     }
-                    else if (rng == 0)
+                    else if ((ai + 150) % 180 == 0 && Main.expertMode)
                     {
-                        tpCoordX = player.position.X - 30;
-                        tpCoordY = player.position.Y;
+                        BossMethods.ShootRing(12, ProjectileID.DeathLaser, 8f, 5f, npc.damage / 4, npc, randRotation);
                     }
-                    else if (rng == 0)
+                    else if ((ai + 180) % 180 == 0 && Main.expertMode)
                     {
-                        tpCoordX = player.position.X - 21;
-                        tpCoordY = player.position.Y + 21;
+                        BossMethods.ShootRing(12, ProjectileID.DeathLaser, 8f, 5f, npc.damage / 5, npc, randRotation);
                     }
-                    else if (rng == 0)
-                    {
-                        tpCoordY = player.position.Y + 30;
-                        tpCoordX = player.position.X;
-                    }
-                    else
-                    {
-                        tpCoordX = player.position.X + 21;
-                        tpCoordY = player.position.Y + 21;
-                    }
-                    Projectile.NewProjectile(new Vector2(tpCoordX, tpCoordY), new Vector2(0, 0), mod.ProjectileType("Boss1Marker"), (int)(66 * expertScale), 5f, -1);
-                    npc.netUpdate = true;
                 }
-                else if (timer == 340)
+                else if (npc.life > (Main.expertMode ? npc.lifeMax * 0.8f : npc.lifeMax * 0.6f))
                 {
-                    npc.position.X = new Vector2(tpCoordX, tpCoordY).X;
-                    npc.position.Y = new Vector2(tpCoordX, tpCoordY).Y;
-                    Dust.NewDust(npc.Center, npc.width, npc.height, 25, 0, 0, 150, default(Color), 0.7f);
-                    Dust.NewDust(npc.Center, npc.width, npc.height, 50, 0, 0, 150, default(Color), 0.7f);
-                    Dust.NewDust(npc.Center, npc.width, npc.height, 60, 0, 0, 150, default(Color), 0.7f);
-                    npc.netUpdate = true;
-                }
-                else if (timer == 460)
-                {
-                    Vector2 dir = new Vector2(32, 0);
-                    for (int i = 0; i < 8; i++)
-                    {
-                        Projectile.NewProjectile(npc.Center, dir.RotatedBy(MathHelper.ToRadians(i * 45)), mod.ProjectileType("Boss1Marker"), (int)(100 * expertScale), 5f, -1);
-                        dir = new Vector2(32, 0);
+                    chaseTimer++;
+                    //Choose direction
+                    if (chaseTimer + 89 % 90 == 0) {
+                        right = Main.rand.Next(0, 2) < 1 ? true : false;
                     }
-                    npc.netUpdate = true;
-                } else if(timer > 540){
-                    timer = 0;
+                    if (chaseTimer <= 91)
+                    {
+                        BossMethods.MoveToward(npc, target, Main.expertMode ? 12f : 8f, 30f);
+                        if (chaseTimer % 2 == 0)
+                        {
+                            if (right == true)
+                            {
+                                Projectile.NewProjectile(npc.Center, 8f * Vector2.Normalize(new Vector2(1, 0).RotatedBy(MathHelper.ToRadians(chaseTimer * 4))), ProjectileID.DeathLaser, npc.damage / 5, 5f);
+                            } else if (right == false)
+                            {
+                                Projectile.NewProjectile(npc.Center, 8f * Vector2.Normalize(new Vector2(1, 0).RotatedBy(MathHelper.ToRadians(chaseTimer * -4))), ProjectileID.DeathLaser, npc.damage / 5, 5f);
+                            }
+                        }
+                    }
+                    else if (chaseTimer < 300)
+                    {
+                        BossMethods.MoveToward(npc, target, Main.expertMode ? 16f : 12f, 30f);
+                        if (ai % (Main.expertMode ? 45 : 75) == 0) {
+                            int attackSelect = Main.rand.Next(0, 3);
+                            int randRotation = Main.rand.Next(0, 45);
+                            if (attackSelect < 1)
+                            {
+                                BossMethods.ShootRing(16, ProjectileID.DeathLaser, 8f, 5f, npc.damage / 6, npc, randRotation);
+                            }
+                            else if (attackSelect < 2)
+                            {
+                                BossMethods.ShootRing(12, ProjectileID.DeathLaser, 8f, 5f, npc.damage / 5, npc, randRotation);
+                            }
+                            else
+                            {
+                                BossMethods.ShootRing(8, ProjectileID.DeathLaser, 8f, 5f, npc.damage / 4, npc, randRotation);
+                            }
+                        }
+                        if (ai % 20 == 0) {
+                            if (Main.rand.Next(0, 2) < 1) {
+                                BossMethods.ShootAt(player, npc, ProjectileID.DeathLaser, 8f, 5f, npc.damage / 4, Main.expertMode ? 1 : 3);
+                            }
+                        }
+                    }
+                    else {
+                        chaseTimer = 0;
+                    }
+                    
                 }
             }
-            }
-        }
+        }       
     }
+}
 

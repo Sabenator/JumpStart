@@ -10,9 +10,11 @@ Currently it adds:
 
 -Some Pre-Hardmode bosses drop Gem bags.
 
--Full Spirit mod support, ALL BOSSES, and Event Bosses
+-Full Spirit mod support, ALL BOSSES
 
--Starting work on Redemption mod
+-Redemption mod finally finished, because I am stupid.
+
+-Whoever made the mod ImkSushis mod Add-on, I hate you with a burning passion. Have fun spell checking all 137 calamity mod boss weapons manually.
 
 Planned Features:
 
