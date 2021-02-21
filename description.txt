@@ -6,13 +6,15 @@ Currently it adds:
 
 -Calamity support for imkSushisMod loot swap tokens, ALL BOSSES
 
+-Spirit Mod support for imkSushisMod loot swap tokens, ALL BOSSES
+
+-Redemption Mod support for imkSushisMod loot swap tokens, ALL BOSSES
+
+-Shadows Of Abaddon support for imkSushisMod loot swap tokens, ALL BOSSES
+
 -Some Pre-Hardmode bosses drop Magic Storage components
 
 -Some Pre-Hardmode bosses drop Gem bags.
-
--Full Spirit mod support, ALL BOSSES
-
--Redemption mod finally finished, because I am stupid.
 
 -Whoever made the mod ImkSushis mod Add-on, I hate you with a burning passion. Have fun spell checking all 137 calamity mod boss weapons manually.
 

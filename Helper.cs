@@ -143,9 +143,9 @@ namespace JumpStart
             }
             npc.velocity = move;
         }
-        public static void DashToward(NPC npc, Vector2 playerTarget, float speed)
+        public static void DashToward(Vector2 npcStart, Vector2 playerTarget, float speed, NPC npc)
         {
-            Vector2 move = playerTarget - npc.Center;
+            Vector2 move = playerTarget - npcStart;
             if (move.Length() < 0.9f * speed) {
             } else if (move.Length() > speed) 
             { 
@@ -153,16 +153,16 @@ namespace JumpStart
             }
             npc.velocity = move;
         }
-        public static void ShootRing(int count, int type, float velocity, float kb, int damage, NPC npc) {
+        public static void ShootRing(int count, int type, float velocity, float kb, int damage, Vector2 pos) {
             for (int i = 0; i < count; i++) {
-                Projectile.NewProjectile(npc.Center, new Vector2(velocity, 0).RotatedBy(MathHelper.ToRadians((360 / count) * i)), type, damage, kb);
+                Projectile.NewProjectile(pos, new Vector2(velocity, 0).RotatedBy(MathHelper.ToRadians((360 / count) * i)), type, damage, kb);
             }
         }
-        public static void ShootRing(int count, int type, float velocity, float kb, int damage, NPC npc, int initRotation)
+        public static void ShootRing(int count, int type, float velocity, float kb, int damage, Vector2 pos, int initRotation)
         {
             for (int i = 0; i < count; i++)
             {
-                Projectile.NewProjectile(npc.Center, new Vector2(velocity, 0).RotatedBy(MathHelper.ToRadians(initRotation)).RotatedBy(MathHelper.ToRadians((360 / count) * i)), type, damage, kb);
+                Projectile.NewProjectile(pos, new Vector2(velocity, 0).RotatedBy(MathHelper.ToRadians(initRotation)).RotatedBy(MathHelper.ToRadians((360 / count) * i)), type, damage, kb);
             }
         }
         public static void ShootAt(Player player, NPC npc, int type, float velocity, float kb, int damage, int inaccuracy) {

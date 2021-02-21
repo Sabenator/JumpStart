@@ -50,20 +50,24 @@ namespace AllTheMods.Items
 			}
 			if (context == "bossBag" && arg == ItemID.EyeOfCthulhuBossBag && magicStorage != null)
 			{
-				if (NPC.downedBoss1 == false) { }
-				player.QuickSpawnItem(mod.ItemType("GemLootBag"));
-				if (WorldGen.crimson) {
-					player.QuickSpawnItem(magicStorage.ItemType("UpgradeCrimtane"), Main.rand.Next(4, 9));
-					
-				}
-				if (!WorldGen.crimson)
+				if (NPC.downedBoss1 == false)
 				{
-					player.QuickSpawnItem(magicStorage.ItemType("UpgradeDemonite"), Main.rand.Next(4, 9));
+					player.QuickSpawnItem(mod.ItemType("GemLootBag"));
+					if (WorldGen.crimson)
+					{
+						player.QuickSpawnItem(magicStorage.ItemType("UpgradeCrimtane"), Main.rand.Next(4, 9));
+
+					}
+					if (!WorldGen.crimson)
+					{
+						player.QuickSpawnItem(magicStorage.ItemType("UpgradeDemonite"), Main.rand.Next(4, 9));
+					}
+
+					if (context == "bossBag" && arg == ItemID.EyeOfCthulhuBossBag && imkSushisMod != null)
+					{
+						player.QuickSpawnItem(imkSushisMod.ItemType("MeteoritePotion"), 1);
+					}
 				}
-			}
-			if (context == "bossBag" && arg == ItemID.EyeOfCthulhuBossBag && imkSushisMod != null)
-			{
-                    player.QuickSpawnItem(imkSushisMod.ItemType("MeteoritePotion"), 1);
 			}
 		}
 

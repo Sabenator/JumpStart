@@ -16,6 +16,7 @@ namespace JumpStart
 		static Mod thoriumMod => ModLoader.GetMod("ThoriumMod");
 		static Mod spiritMod => ModLoader.GetMod("SpiritMod");
 		static Mod redemptionMod => ModLoader.GetMod("Redemption");
+		static Mod sacredToolsMod => ModLoader.GetMod("SacredTools");
 		public List<string> RecipeGroups = new List<string>();
 		public override void AddRecipeGroups()
 		{
@@ -317,7 +318,7 @@ namespace JumpStart
 				}
 
 				//Infernon
-				rg Infernon = new rg(spiritMod, "Infernon", "InfernalSword", "SevenSins", "InfernalStaff", "EyeOfTheInferno", "InfernalJavelin", "DiabolicShield", "InfernalShield");
+				rg Infernon = new rg(spiritMod, "Infernon", "InfernalSword", "SevenSins", "InfernalStaff", "EyeOfTheInferno", "InfernalJavelin", "EyeOfTheInferno", "InfernalShield");
 				if (Infernon._RecipeGroup != null)
 				{
 					RecipeGroup.RegisterGroup("JumpStart:Infernon", Infernon._RecipeGroup);
@@ -415,6 +416,23 @@ namespace JumpStart
 				RecipeGroup.RegisterGroup("JumpStart:Nebuleus", Nebuleus._RecipeGroup);
 				RecipeGroups.Add("Nebuleus");
 			}
+			if (sacredToolsMod != null) {
+				rg FlamingPumpkin = new rg(sacredToolsMod, "Flaming Pumpkin", "PumpGlove", "PumpYoyo", "MoodSummon");
+				RecipeGroup.RegisterGroup("JumpStart:FlamingPumpkin", FlamingPumpkin._RecipeGroup);
+				RecipeGroups.Add("FlamingPumpkin");
+
+				rg ZombiePiglinBrute = new rg(sacredToolsMod, "Zombie Piglin Brute", "Sausbow", "Ribarang", "DeadVoxel", "MissingFury");
+				RecipeGroup.RegisterGroup("JumpStart:ZombiePiglinBrute", ZombiePiglinBrute._RecipeGroup);
+				RecipeGroups.Add("ZombiePiglinBrute");
+
+				rg Araneas = new rg(sacredToolsMod, "Araneas", "ArachnesGaze", "HoariHemonga", "RazorfangDagger", "SanguineumVirgam");
+				RecipeGroup.RegisterGroup("JumpStart:Araneas", Araneas._RecipeGroup);
+				RecipeGroups.Add("Araneas");
+
+				rg TheLostSiblings = new rg(sacredToolsMod, "The Lost Siblings", "BlindJustice", "StarScourge", "CosmicCloudBracelet", "LightningRifle", "AsteroidShower");
+				RecipeGroup.RegisterGroup("JumpStart:TheLostSiblings", TheLostSiblings._RecipeGroup);
+				RecipeGroups.Add("TheLostSiblings");
+			}
 
 
 			List<int> preHardModeBarsList = new List<int>();
@@ -478,6 +496,139 @@ namespace JumpStart
 
         public override void AddRecipes()
         {
+			if (sacredToolsMod != null && imkSushisMod != null) {
+				
+				ModRecipe FlamingPumpkin1 = new ModRecipe(this);
+				FlamingPumpkin1.AddRecipeGroup("JumpStart:FlamingPumpkin", 1);
+				FlamingPumpkin1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				FlamingPumpkin1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Fl1 = new ItemCheck(sacredToolsMod.ItemType("PumpGlove"));
+				FlamingPumpkin1.SetResult(Fl1.Validate(), 1);
+				FlamingPumpkin1.AddRecipe();
+
+				ModRecipe FlamingPumpkin2 = new ModRecipe(this);
+				FlamingPumpkin2.AddRecipeGroup("JumpStart:FlamingPumpkin", 1);
+				FlamingPumpkin2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				FlamingPumpkin2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Fl2 = new ItemCheck(sacredToolsMod.ItemType("PumpYoyo"));
+				FlamingPumpkin2.SetResult(Fl2.Validate(), 1);
+				FlamingPumpkin2.AddRecipe();
+
+				ModRecipe FlamingPumpkin3 = new ModRecipe(this);
+				FlamingPumpkin3.AddRecipeGroup("JumpStart:FlamingPumpkin", 1);
+				FlamingPumpkin3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				FlamingPumpkin3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Fl3 = new ItemCheck(sacredToolsMod.ItemType("MoodSummon"));
+				FlamingPumpkin3.SetResult(Fl3.Validate(), 1);
+				FlamingPumpkin3.AddRecipe();
+
+
+				ModRecipe ZombiePiglinBrute1 = new ModRecipe(this);
+				ZombiePiglinBrute1.AddRecipeGroup("JumpStart:ZombiePiglinBrute", 1);
+				ZombiePiglinBrute1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				ZombiePiglinBrute1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Zo1 = new ItemCheck(sacredToolsMod.ItemType("Sausbow"));
+				ZombiePiglinBrute1.SetResult(Zo1.Validate(), 1);
+				ZombiePiglinBrute1.AddRecipe();
+
+				ModRecipe ZombiePiglinBrute2 = new ModRecipe(this);
+				ZombiePiglinBrute2.AddRecipeGroup("JumpStart:ZombiePiglinBrute", 1);
+				ZombiePiglinBrute2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				ZombiePiglinBrute2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Zo2 = new ItemCheck(sacredToolsMod.ItemType("Ribarang"));
+				ZombiePiglinBrute2.SetResult(Zo2.Validate(), 1);
+				ZombiePiglinBrute2.AddRecipe();
+
+				ModRecipe ZombiePiglinBrute3 = new ModRecipe(this);
+				ZombiePiglinBrute3.AddRecipeGroup("JumpStart:ZombiePiglinBrute", 1);
+				ZombiePiglinBrute3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				ZombiePiglinBrute3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Zo3 = new ItemCheck(sacredToolsMod.ItemType("DeadVoxel"));
+				ZombiePiglinBrute3.SetResult(Zo3.Validate(), 1);
+				ZombiePiglinBrute3.AddRecipe();
+
+				ModRecipe ZombiePiglinBrute4 = new ModRecipe(this);
+				ZombiePiglinBrute4.AddRecipeGroup("JumpStart:ZombiePiglinBrute", 1);
+				ZombiePiglinBrute4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				ZombiePiglinBrute4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Zo4 = new ItemCheck(sacredToolsMod.ItemType("MissingFury"));
+				ZombiePiglinBrute4.SetResult(Zo4.Validate(), 1);
+				ZombiePiglinBrute4.AddRecipe();
+
+				
+				ModRecipe Araneas1 = new ModRecipe(this);
+				Araneas1.AddRecipeGroup("JumpStart:Araneas", 1);
+				Araneas1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Araneas1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ar1 = new ItemCheck(sacredToolsMod.ItemType("ArachnesGaze"));
+				Araneas1.SetResult(Ar1.Validate(), 1);
+				Araneas1.AddRecipe();
+
+				ModRecipe Araneas2 = new ModRecipe(this);
+				Araneas2.AddRecipeGroup("JumpStart:Araneas", 1);
+				Araneas2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Araneas2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ar2 = new ItemCheck(sacredToolsMod.ItemType("HoariHemonga"));
+				Araneas2.SetResult(Ar2.Validate(), 1);
+				Araneas2.AddRecipe();
+
+				ModRecipe Araneas3 = new ModRecipe(this);
+				Araneas3.AddRecipeGroup("JumpStart:Araneas", 1);
+				Araneas3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Araneas3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ar3 = new ItemCheck(sacredToolsMod.ItemType("RazorfangDagger"));
+				Araneas3.SetResult(Ar3.Validate(), 1);
+				Araneas3.AddRecipe();
+
+				ModRecipe Araneas4 = new ModRecipe(this);
+				Araneas4.AddRecipeGroup("JumpStart:Araneas", 1);
+				Araneas4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Araneas4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ar4 = new ItemCheck(sacredToolsMod.ItemType("SanguineumVirgam"));
+				Araneas4.SetResult(Ar4.Validate(), 1);
+				Araneas4.AddRecipe();
+
+
+				ModRecipe TheLostSiblings1 = new ModRecipe(this);
+				TheLostSiblings1.AddRecipeGroup("JumpStart:TheLostSiblings", 1);
+				TheLostSiblings1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				TheLostSiblings1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Th1 = new ItemCheck(sacredToolsMod.ItemType("BlindJustice"));
+				TheLostSiblings1.SetResult(Th1.Validate(), 1);
+				TheLostSiblings1.AddRecipe();
+
+				ModRecipe TheLostSiblings2 = new ModRecipe(this);
+				TheLostSiblings2.AddRecipeGroup("JumpStart:TheLostSiblings", 1);
+				TheLostSiblings2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				TheLostSiblings2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Th2 = new ItemCheck(sacredToolsMod.ItemType("StarScourge"));
+				TheLostSiblings2.SetResult(Th2.Validate(), 1);
+				TheLostSiblings2.AddRecipe();
+
+				ModRecipe TheLostSiblings3 = new ModRecipe(this);
+				TheLostSiblings3.AddRecipeGroup("JumpStart:TheLostSiblings", 1);
+				TheLostSiblings3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				TheLostSiblings3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Th3 = new ItemCheck(sacredToolsMod.ItemType("CosmicCloudBracelet"));
+				TheLostSiblings3.SetResult(Th3.Validate(), 1);
+				TheLostSiblings3.AddRecipe();
+
+				ModRecipe TheLostSiblings4 = new ModRecipe(this);
+				TheLostSiblings4.AddRecipeGroup("JumpStart:TheLostSiblings", 1);
+				TheLostSiblings4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				TheLostSiblings4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Th4 = new ItemCheck(sacredToolsMod.ItemType("LightningRifle"));
+				TheLostSiblings4.SetResult(Th4.Validate(), 1);
+				TheLostSiblings4.AddRecipe();
+
+				ModRecipe TheLostSiblings5 = new ModRecipe(this);
+				TheLostSiblings5.AddRecipeGroup("JumpStart:TheLostSiblings", 1);
+				TheLostSiblings5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				TheLostSiblings5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Th5 = new ItemCheck(sacredToolsMod.ItemType("AsteroidShower"));
+				TheLostSiblings5.SetResult(Th5.Validate(), 1);
+				TheLostSiblings5.AddRecipe();
+			}
 			if (redemptionMod != null && imkSushisMod != null) {
 				
 				
