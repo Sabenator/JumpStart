@@ -16,8 +16,7 @@ Currently it adds:
 
 -Some Pre-Hardmode bosses drop Gem bags.
 
--Whoever made the mod ImkSushis mod Add-on, I hate you with a burning passion. Have fun spell checking all 137 calamity mod boss weapons manually.
-
+-Hey MicktheRus. What's popping?
 Planned Features:
 
 -More loot Swapping recipes for: Redemption, Thorium, Elements awoken, Shadows of Abbadon, Ancients Awakened (probably in this order)

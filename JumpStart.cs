@@ -327,11 +327,9 @@ namespace JumpStart
 
 				//Dusking
 				rg Dusking = new rg(spiritMod, "Dusking", "ShadowflameSword", "Shadowmoor", "UmbraStaff", "ShadowSphere");
-				if (Dusking._RecipeGroup != null)
-				{
-					RecipeGroup.RegisterGroup("JumpStart:Dusking", Dusking._RecipeGroup);
-					RecipeGroups.Add("Dusking");
-				}
+				RecipeGroup.RegisterGroup("JumpStart:Dusking", Dusking._RecipeGroup);
+				RecipeGroups.Add("Dusking");
+
 
 				//Atlas
 				rg Atlas = new rg(spiritMod, "Atlas", "Mountain", "Earthshatter", "QuakeFist", "CragboundStaff", "KingRock", "TitanboundBulwark");
@@ -433,6 +431,48 @@ namespace JumpStart
 				RecipeGroup.RegisterGroup("JumpStart:TheLostSiblings", TheLostSiblings._RecipeGroup);
 				RecipeGroups.Add("TheLostSiblings");
 			}
+            if (thoriumMod != null)
+            {
+                rg GrandThunderBird = new rg(thoriumMod, "Grand Thunder Bird", "HatchlingStaff", "ThunderTalon", "Didgeridoo", "TalonBurst");
+                RecipeGroup.RegisterGroup("JumpStart:GrandThunderBird", GrandThunderBird._RecipeGroup);
+                RecipeGroups.Add("GrandThunderBird");
+
+                rg QueenJellyfish = new rg(thoriumMod, "Queen Jellyfish", "SparkingJellyBall", "BlunderBuss", "GiantGlowstick", "JellyPondWand", "ConchShell");
+                RecipeGroup.RegisterGroup("JumpStart:QueenJellyfish", QueenJellyfish._RecipeGroup);
+                RecipeGroups.Add("QueenJellyfish");
+
+                rg Viscount = new rg(thoriumMod, "Viscount", "BatWing", "GuanoGunner", "VampireScepter", "ViscountCane", "BatScythe", "SonarCannon");
+                RecipeGroup.RegisterGroup("JumpStart:Viscount", Viscount._RecipeGroup);
+                RecipeGroups.Add("Viscount");
+
+				rg GraniteEnergyStorm = new rg(thoriumMod, "Granite Energy Storm", "EnergyStormPartisan", "EnergyStormBolter", "EnergyProjector", "BoulderProbe", "BatScythe", "ShockAbsorber");
+				RecipeGroup.RegisterGroup("JumpStart:GraniteEnergyStorm", GraniteEnergyStorm._RecipeGroup);
+				RecipeGroups.Add("GraniteEnergyStorm");
+
+				rg BuriedChampion = new rg(thoriumMod, "Buried Champion", "ChampionBlade", "HeroTripleBow", "ChampionBomberStaff", "ChampionsGodHand", "ChampionsBarrier");
+				RecipeGroup.RegisterGroup("JumpStart:BuriedChampion", BuriedChampion._RecipeGroup);
+				RecipeGroups.Add("BuriedChampion");
+
+				rg StarScouter = new rg(thoriumMod, "Star Scouter", "StarTrail", "GaussSpark", "HitScanner", "DistressCaller", "GaussKnife", "StarRod", "Roboboe");
+				RecipeGroup.RegisterGroup("JumpStart:StarScouter", StarScouter._RecipeGroup);
+				RecipeGroups.Add("StarScouter");
+
+				rg BoreanStrider = new rg(thoriumMod, "Borean Strider", "GlacialSting", "GlacierFang", "FrostFang", "FreezeRay", "CryoFang");
+				RecipeGroup.RegisterGroup("JumpStart:BoreanStrider", BoreanStrider._RecipeGroup);
+				RecipeGroups.Add("BoreanStrider");
+
+				rg FallenBeholder = new rg(thoriumMod, "Fallen Beholder", "ThermogenicImpaler", "Obliterator", "DemonFireBlastWand", "DevilPauldron", "BeholderStaff", "VoidPlanter");
+				RecipeGroup.RegisterGroup("JumpStart:FallenBeholder", FallenBeholder._RecipeGroup);
+				RecipeGroups.Add("FallenBeholder");
+
+				rg Lich = new rg(thoriumMod, "Lich", "SoulRender", "WitherStaff", "CryptWand", "SoulCleaver", "CadaverCornet");
+				RecipeGroup.RegisterGroup("JumpStart:Lich", Lich._RecipeGroup);
+				RecipeGroups.Add("Lich");
+
+				rg Abyssion = new rg(thoriumMod, "Abyssion", "TheIncubator", "MantisPunch", "TrenchSpitter", "OldGodGrasp", "SirensAllure");
+				RecipeGroup.RegisterGroup("JumpStart:Abyssion", Abyssion._RecipeGroup);
+				RecipeGroups.Add("Abyssion");
+			}
 
 
 			List<int> preHardModeBarsList = new List<int>();
@@ -493,9 +533,74 @@ namespace JumpStart
 			RecipeGroup HardmodeBars = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " Pre-Hardmode Bars", earlyHardModeBarsList.ToArray());
 
 		}
-
+		
         public override void AddRecipes()
         {
+			if (thoriumMod != null && imkSushisMod != null) {
+				ModRecipe GrandThunderBird1 = new ModRecipe(this);
+				GrandThunderBird1.AddRecipeGroup("JumpStart:GrandThunderBird", 1);
+				GrandThunderBird1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				GrandThunderBird1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Gr1 = new ItemCheck(thoriumMod.ItemType("HatchlingStaff"));
+				GrandThunderBird1.SetResult(Gr1.Validate(), 1);
+				GrandThunderBird1.AddRecipe();
+
+				ModRecipe GrandThunderBird2 = new ModRecipe(this);
+				GrandThunderBird2.AddRecipeGroup("JumpStart:GrandThunderBird", 1);
+				GrandThunderBird2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				GrandThunderBird2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Gr2 = new ItemCheck(thoriumMod.ItemType("ThunderTalon"));
+				GrandThunderBird2.SetResult(Gr2.Validate(), 1);
+				GrandThunderBird2.AddRecipe();
+
+				ModRecipe GrandThunderBird3 = new ModRecipe(this);
+				GrandThunderBird3.AddRecipeGroup("JumpStart:GrandThunderBird", 1);
+				GrandThunderBird3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				GrandThunderBird3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Gr3 = new ItemCheck(thoriumMod.ItemType("Didgeridoo"));
+				GrandThunderBird3.SetResult(Gr3.Validate(), 1);
+				GrandThunderBird3.AddRecipe();
+
+				ModRecipe GrandThunderBird4 = new ModRecipe(this);
+				GrandThunderBird4.AddRecipeGroup("JumpStart:GrandThunderBird", 1);
+				GrandThunderBird4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				GrandThunderBird4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Gr4 = new ItemCheck(thoriumMod.ItemType("TalonBurst"));
+				GrandThunderBird4.SetResult(Gr4.Validate(), 1);
+				GrandThunderBird4.AddRecipe();
+
+				ModRecipe QueenJellyfish1 = new ModRecipe(this);
+				QueenJellyfish1.AddRecipeGroup("JumpStart:QueenJellyfish", 1);
+				QueenJellyfish1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				QueenJellyfish1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Qu1 = new ItemCheck(thoriumMod.ItemType("SparkingJellyBall"));
+				QueenJellyfish1.SetResult(Qu1.Validate(), 1);
+				QueenJellyfish1.AddRecipe();
+
+				ModRecipe QueenJellyfish2 = new ModRecipe(this);
+				QueenJellyfish2.AddRecipeGroup("JumpStart:QueenJellyfish", 1);
+				QueenJellyfish2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				QueenJellyfish2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Qu2 = new ItemCheck(thoriumMod.ItemType("BlunderBuss"));
+				QueenJellyfish2.SetResult(Qu2.Validate(), 1);
+				QueenJellyfish2.AddRecipe();
+
+				ModRecipe QueenJellyfish3 = new ModRecipe(this);
+				QueenJellyfish3.AddRecipeGroup("JumpStart:QueenJellyfish", 1);
+				QueenJellyfish3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				QueenJellyfish3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Qu3 = new ItemCheck(thoriumMod.ItemType("GiantGlowstick"));
+				QueenJellyfish3.SetResult(Qu3.Validate(), 1);
+				QueenJellyfish3.AddRecipe();
+
+				ModRecipe QueenJellyfish4 = new ModRecipe(this);
+				QueenJellyfish4.AddRecipeGroup("JumpStart:QueenJellyfish", 1);
+				QueenJellyfish4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				QueenJellyfish4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Qu4 = new ItemCheck(thoriumMod.ItemType("JellyPondWand"));
+				QueenJellyfish4.SetResult(Qu4.Validate(), 1);
+				QueenJellyfish4.AddRecipe();
+			}
 			if (sacredToolsMod != null && imkSushisMod != null) {
 				
 				ModRecipe FlamingPumpkin1 = new ModRecipe(this);
