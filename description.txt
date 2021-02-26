@@ -2,7 +2,7 @@ JumpStart is a mod in progress intended to make the game a little bit less tedio
 
 Currently it adds:
 
--A starter bag
+-A starter bag, now with a slightly better sprite
 
 -Calamity support for imkSushisMod loot swap tokens, ALL BOSSES
 
@@ -12,14 +12,16 @@ Currently it adds:
 
 -Shadows Of Abaddon support for imkSushisMod loot swap tokens, ALL BOSSES
 
+-Thorium support for imkSushisMod loot swap tokens, ALL BOSSES
+
 -Some Pre-Hardmode bosses drop Magic Storage components
 
 -Some Pre-Hardmode bosses drop Gem bags.
 
--Hey MicktheRus. What's popping?
+-Hey Mick, hows it going with adding recipes? Now do you understand what I meant by spell checking?
 Planned Features:
 
--More loot Swapping recipes for: Redemption, Thorium, Elements awoken, Shadows of Abbadon, Ancients Awakened (probably in this order)
+-More loot Swapping recipes for: Elements awoken, Ancients Awakened, Ultranium, etc (probably in this order)
 
 -The ability to craft bars down into lower tiers from previous game stages (ex. Cosmolite -> Chlorophyte)
      

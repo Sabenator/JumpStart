@@ -17,6 +17,8 @@ namespace JumpStart
 		static Mod spiritMod => ModLoader.GetMod("SpiritMod");
 		static Mod redemptionMod => ModLoader.GetMod("Redemption");
 		static Mod sacredToolsMod => ModLoader.GetMod("SacredTools");
+		static Mod ultraniumMod => ModLoader.GetMod("Ultranium");
+
 		public List<string> RecipeGroups = new List<string>();
 		public override void AddRecipeGroups()
 		{
@@ -30,8 +32,6 @@ namespace JumpStart
 				ItemID.FragmentStardust
 			});
 			RecipeGroup.RegisterGroup("JumpStart:LunarFragments", lunarFragments);
-
-
 			if (calamityMod != null)
 			{
 				/** RecipeGroup Crabulon = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + "Crabulon Weapon", new int[] {
@@ -473,6 +473,40 @@ namespace JumpStart
 				RecipeGroup.RegisterGroup("JumpStart:Abyssion", Abyssion._RecipeGroup);
 				RecipeGroups.Add("Abyssion");
 			}
+			if (ultraniumMod != null)
+			{
+				rg ZephyrSquid = new rg(ultraniumMod, "Zephyr Squid", "ZephyrBlade", "ZephyrKnife", "ZephyrTrident");
+				RecipeGroup.RegisterGroup("JumpStart:Zephyr", ZephyrSquid._RecipeGroup);
+				RecipeGroups.Add("ZephyrSquid");
+
+				rg Glacieron = new rg(ultraniumMod, "Glacieron", "GlacialFlail", "GlacialGun", "GlacialWand");
+				RecipeGroup.RegisterGroup("JumpStart:Glacieron", Glacieron._RecipeGroup);
+				RecipeGroups.Add("Glacieron");
+
+				rg Dread = new rg(ultraniumMod, "Dread", "DreadBow", "DreadStaff", "DreadSummon", "DreadSword");
+				RecipeGroup.RegisterGroup("JumpStart:Dread", Dread._RecipeGroup);
+				RecipeGroups.Add("Dread");
+
+				rg Xenanis = new rg(ultraniumMod, "Xenanis", "EtherealBow", "EtherealDidgeridoo", "EtherealSummon", "EtherealSword", "EtherealTome");
+				RecipeGroup.RegisterGroup("JumpStart:Xenanis", Xenanis._RecipeGroup);
+				RecipeGroups.Add("Xenanis");
+
+				rg Ultrum = new rg(ultraniumMod, "Ultrum", "UltraniumSword", "UltraniumSword", "UltraTome", "UltraniumKunai", "UltraniumBow", "UltraFlail");
+				RecipeGroup.RegisterGroup("JumpStart:Ultrum", Ultrum._RecipeGroup);
+				RecipeGroups.Add("Ultrum");
+
+				rg Ignodium = new rg(ultraniumMod, "Ignodium", "HellThrow", "HellFlail", "HellTome", "HellGun", "HellStaff", "HellJavelin");
+				RecipeGroup.RegisterGroup("JumpStart:Ignodium", Ignodium._RecipeGroup);
+				RecipeGroups.Add("Ignodium");
+
+				rg AbsoluteDread = new rg(ultraniumMod, "Absolute Dread", "DreadDisc", "DreadScepter", "DreadFlameBlaster", "DreadSpear", "DreadTome", "FearStaff", "DreadYoyo");
+				RecipeGroup.RegisterGroup("JumpStart:AbsoluteDread", AbsoluteDread._RecipeGroup);
+				RecipeGroups.Add("AbsoluteDread");
+
+				rg Erebus = new rg(ultraniumMod, "Erebus", "Caliginus", "CavumNigrum", "Crepus", "ErebusGuitar", "Exitium", "Inanis", "Nihil", "Noctis", "SolibusOrba", "Umbra");
+				RecipeGroup.RegisterGroup("JumpStart:Erebus", Erebus._RecipeGroup);
+				RecipeGroups.Add("Erebus");
+			}
 
 
 			List<int> preHardModeBarsList = new List<int>();
@@ -536,6 +570,264 @@ namespace JumpStart
 		
         public override void AddRecipes()
         {
+            if (ultraniumMod != null && imkSushisMod != null) {
+				ModRecipe ZephyrSquid1 = new ModRecipe(this);
+				ZephyrSquid1.AddRecipeGroup("JumpStart:ZephyrSquid", 1);
+				ZephyrSquid1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				ZephyrSquid1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ze1 = new ItemCheck(ultraniumMod.ItemType("ZephyrBlade"));
+				ZephyrSquid1.SetResult(Ze1.Validate(), 1);
+				ZephyrSquid1.AddRecipe();
+
+				ModRecipe ZephyrSquid2 = new ModRecipe(this);
+				ZephyrSquid2.AddRecipeGroup("JumpStart:ZephyrSquid", 1);
+				ZephyrSquid2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				ZephyrSquid2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ze2 = new ItemCheck(ultraniumMod.ItemType("ZephyrKnife"));
+				ZephyrSquid2.SetResult(Ze2.Validate(), 1);
+				ZephyrSquid2.AddRecipe();
+
+				ModRecipe ZephyrSquid3 = new ModRecipe(this);
+				ZephyrSquid3.AddRecipeGroup("JumpStart:ZephyrSquid", 1);
+				ZephyrSquid3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				ZephyrSquid3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ze3 = new ItemCheck(ultraniumMod.ItemType("ZephyrTrident"));
+				ZephyrSquid3.SetResult(Ze3.Validate(), 1);
+				ZephyrSquid3.AddRecipe();
+
+				ModRecipe Glacieron1 = new ModRecipe(this);
+				Glacieron1.AddRecipeGroup("JumpStart:Glacieron", 1);
+				Glacieron1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Glacieron1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Gl1 = new ItemCheck(ultraniumMod.ItemType("GlacialFlail"));
+				Glacieron1.SetResult(Gl1.Validate(), 1);
+				Glacieron1.AddRecipe();
+
+				ModRecipe Glacieron2 = new ModRecipe(this);
+				Glacieron2.AddRecipeGroup("JumpStart:Glacieron", 1);
+				Glacieron2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Glacieron2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Gl2 = new ItemCheck(ultraniumMod.ItemType("GlacialGun"));
+				Glacieron2.SetResult(Gl2.Validate(), 1);
+				Glacieron2.AddRecipe();
+
+				ModRecipe Glacieron3 = new ModRecipe(this);
+				Glacieron3.AddRecipeGroup("JumpStart:Glacieron", 1);
+				Glacieron3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Glacieron3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Gl3 = new ItemCheck(ultraniumMod.ItemType("GlacialWand"));
+				Glacieron3.SetResult(Gl3.Validate(), 1);
+				Glacieron3.AddRecipe();
+
+				ModRecipe Dread1 = new ModRecipe(this);
+				Dread1.AddRecipeGroup("JumpStart:Dread", 1);
+				Dread1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Dread1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Dr1 = new ItemCheck(ultraniumMod.ItemType("DreadBow"));
+				Dread1.SetResult(Dr1.Validate(), 1);
+				Dread1.AddRecipe();
+
+				ModRecipe Dread2 = new ModRecipe(this);
+				Dread2.AddRecipeGroup("JumpStart:Dread", 1);
+				Dread2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Dread2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Dr2 = new ItemCheck(ultraniumMod.ItemType("DreadStaff"));
+				Dread2.SetResult(Dr2.Validate(), 1);
+				Dread2.AddRecipe();
+
+				ModRecipe Dread3 = new ModRecipe(this);
+				Dread3.AddRecipeGroup("JumpStart:Dread", 1);
+				Dread3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Dread3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Dr3 = new ItemCheck(ultraniumMod.ItemType("DreadSummon"));
+				Dread3.SetResult(Dr3.Validate(), 1);
+				Dread3.AddRecipe();
+
+				ModRecipe Dread4 = new ModRecipe(this);
+				Dread4.AddRecipeGroup("JumpStart:Dread", 1);
+				Dread4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Dread4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Dr4 = new ItemCheck(ultraniumMod.ItemType("DreadSword"));
+				Dread4.SetResult(Dr4.Validate(), 1);
+				Dread4.AddRecipe();
+
+				ModRecipe Xenanis1 = new ModRecipe(this);
+				Xenanis1.AddRecipeGroup("JumpStart:Xenanis", 1);
+				Xenanis1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Xenanis1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Xe1 = new ItemCheck(ultraniumMod.ItemType("EtherealBow"));
+				Xenanis1.SetResult(Xe1.Validate(), 1);
+				Xenanis1.AddRecipe();
+
+				ModRecipe Xenanis2 = new ModRecipe(this);
+				Xenanis2.AddRecipeGroup("JumpStart:Xenanis", 1);
+				Xenanis2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Xenanis2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Xe2 = new ItemCheck(ultraniumMod.ItemType("EtherealDidgeridoo"));
+				Xenanis2.SetResult(Xe2.Validate(), 1);
+				Xenanis2.AddRecipe();
+
+				ModRecipe Xenanis3 = new ModRecipe(this);
+				Xenanis3.AddRecipeGroup("JumpStart:Xenanis", 1);
+				Xenanis3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Xenanis3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Xe3 = new ItemCheck(ultraniumMod.ItemType("EtherealSummon"));
+				Xenanis3.SetResult(Xe3.Validate(), 1);
+				Xenanis3.AddRecipe();
+
+				ModRecipe Xenanis4 = new ModRecipe(this);
+				Xenanis4.AddRecipeGroup("JumpStart:Xenanis", 1);
+				Xenanis4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Xenanis4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Xe4 = new ItemCheck(ultraniumMod.ItemType("EtherealSword"));
+				Xenanis4.SetResult(Xe4.Validate(), 1);
+				Xenanis4.AddRecipe();
+
+				ModRecipe Xenanis5 = new ModRecipe(this);
+				Xenanis5.AddRecipeGroup("JumpStart:Xenanis", 1);
+				Xenanis5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Xenanis5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Xe5 = new ItemCheck(ultraniumMod.ItemType("EtherealTome"));
+				Xenanis5.SetResult(Xe5.Validate(), 1);
+				Xenanis5.AddRecipe();
+
+				ModRecipe Ultrum1 = new ModRecipe(this);
+				Ultrum1.AddRecipeGroup("JumpStart:Ultrum", 1);
+				Ultrum1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Ultrum1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ul1 = new ItemCheck(ultraniumMod.ItemType("UltraniumSword"));
+				Ultrum1.SetResult(Ul1.Validate(), 1);
+				Ultrum1.AddRecipe();
+
+				ModRecipe Ultrum2 = new ModRecipe(this);
+				Ultrum2.AddRecipeGroup("JumpStart:Ultrum", 1);
+				Ultrum2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Ultrum2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ul2 = new ItemCheck(ultraniumMod.ItemType("UltraniumStaff"));
+				Ultrum2.SetResult(Ul2.Validate(), 1);
+				Ultrum2.AddRecipe();
+
+				ModRecipe Ultrum3 = new ModRecipe(this);
+				Ultrum3.AddRecipeGroup("JumpStart:Ultrum", 1);
+				Ultrum3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Ultrum3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ul3 = new ItemCheck(ultraniumMod.ItemType("UltraTome"));
+				Ultrum3.SetResult(Ul3.Validate(), 1);
+				Ultrum3.AddRecipe();
+
+				ModRecipe Ultrum4 = new ModRecipe(this);
+				Ultrum4.AddRecipeGroup("JumpStart:Ultrum", 1);
+				Ultrum4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Ultrum4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ul4 = new ItemCheck(ultraniumMod.ItemType("UltraniumKunai"));
+				Ultrum4.SetResult(Ul4.Validate(), 1);
+				Ultrum4.AddRecipe();
+
+				ModRecipe Ultrum5 = new ModRecipe(this);
+				Ultrum5.AddRecipeGroup("JumpStart:Ultrum", 1);
+				Ultrum5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Ultrum5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ul5 = new ItemCheck(ultraniumMod.ItemType("UltraniumBow"));
+				Ultrum5.SetResult(Ul5.Validate(), 1);
+				Ultrum5.AddRecipe();
+
+				ModRecipe Ultrum6 = new ModRecipe(this);
+				Ultrum6.AddRecipeGroup("JumpStart:Ultrum", 1);
+				Ultrum6.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Ultrum6.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ul6 = new ItemCheck(ultraniumMod.ItemType("UltraFlail"));
+				Ultrum6.SetResult(Ul6.Validate(), 1);
+				Ultrum6.AddRecipe();
+
+				ModRecipe Ignodium1 = new ModRecipe(this);
+				Ignodium1.AddRecipeGroup("JumpStart:Ignodium", 1);
+				Ignodium1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Ignodium1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ig1 = new ItemCheck(ultraniumMod.ItemType("HellThrow"));
+				Ignodium1.SetResult(Ig1.Validate(), 1);
+				Ignodium1.AddRecipe();
+
+				ModRecipe Ignodium2 = new ModRecipe(this);
+				Ignodium2.AddRecipeGroup("JumpStart:Ignodium", 1);
+				Ignodium2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Ignodium2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ig2 = new ItemCheck(ultraniumMod.ItemType("HellFlail"));
+				Ignodium2.SetResult(Ig2.Validate(), 1);
+				Ignodium2.AddRecipe();
+
+				ModRecipe Ignodium3 = new ModRecipe(this);
+				Ignodium3.AddRecipeGroup("JumpStart:Ignodium", 1);
+				Ignodium3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Ignodium3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ig3 = new ItemCheck(ultraniumMod.ItemType("HellTome"));
+				Ignodium3.SetResult(Ig3.Validate(), 1);
+				Ignodium3.AddRecipe();
+
+				ModRecipe Ignodium4 = new ModRecipe(this);
+				Ignodium4.AddRecipeGroup("JumpStart:Ignodium", 1);
+				Ignodium4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Ignodium4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ig4 = new ItemCheck(ultraniumMod.ItemType("HellGun"));
+				Ignodium4.SetResult(Ig4.Validate(), 1);
+				Ignodium4.AddRecipe();
+
+				ModRecipe Ignodium5 = new ModRecipe(this);
+				Ignodium5.AddRecipeGroup("JumpStart:Ignodium", 1);
+				Ignodium5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Ignodium5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ig5 = new ItemCheck(ultraniumMod.ItemType("HellStaff"));
+				Ignodium5.SetResult(Ig5.Validate(), 1);
+				Ignodium5.AddRecipe();
+
+				ModRecipe Ignodium6 = new ModRecipe(this);
+				Ignodium6.AddRecipeGroup("JumpStart:Ignodium", 1);
+				Ignodium6.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Ignodium6.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ig6 = new ItemCheck(ultraniumMod.ItemType("HellJavelin"));
+				Ignodium6.SetResult(Ig6.Validate(), 1);
+				Ignodium6.AddRecipe();
+
+				ModRecipe AbsoluteDread1 = new ModRecipe(this);
+				AbsoluteDread1.AddRecipeGroup("JumpStart:AbsoluteDread", 1);
+				AbsoluteDread1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				AbsoluteDread1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ab1 = new ItemCheck(ultraniumMod.ItemType("DreadDisc"));
+				AbsoluteDread1.SetResult(Ab1.Validate(), 1);
+				AbsoluteDread1.AddRecipe();
+
+				ModRecipe AbsoluteDread2 = new ModRecipe(this);
+				AbsoluteDread2.AddRecipeGroup("JumpStart:AbsoluteDread", 1);
+				AbsoluteDread2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				AbsoluteDread2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ab2 = new ItemCheck(ultraniumMod.ItemType("DreadScepter"));
+				AbsoluteDread2.SetResult(Ab2.Validate(), 1);
+				AbsoluteDread2.AddRecipe();
+
+				ModRecipe AbsoluteDread3 = new ModRecipe(this);
+				AbsoluteDread3.AddRecipeGroup("JumpStart:AbsoluteDread", 1);
+				AbsoluteDread3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				AbsoluteDread3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ab3 = new ItemCheck(ultraniumMod.ItemType("DreadScepter"));
+				AbsoluteDread3.SetResult(Ab3.Validate(), 1);
+				AbsoluteDread3.AddRecipe();
+
+				ModRecipe AbsoluteDread4 = new ModRecipe(this);
+				AbsoluteDread4.AddRecipeGroup("JumpStart:AbsoluteDread", 1);
+				AbsoluteDread4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				AbsoluteDread4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ab4 = new ItemCheck(ultraniumMod.ItemType("DreadFlameBlaster"));
+				AbsoluteDread4.SetResult(Ab4.Validate(), 1);
+				AbsoluteDread4.AddRecipe();
+
+				ModRecipe AbsoluteDread = new ModRecipe(this);
+				AbsoluteDread1.AddRecipeGroup("JumpStart:AbsoluteDread", 1);
+				AbsoluteDread1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				AbsoluteDread1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ab1 = new ItemCheck(ultraniumMod.ItemType("DreadDisc"));
+				AbsoluteDread1.SetResult(Ab1.Validate(), 1);
+				AbsoluteDread1.AddRecipe();
+
+			}
 			if (thoriumMod != null && imkSushisMod != null) {
 				ModRecipe GrandThunderBird1 = new ModRecipe(this);
 				GrandThunderBird1.AddRecipeGroup("JumpStart:GrandThunderBird", 1);
@@ -600,6 +892,367 @@ namespace JumpStart
 				ItemCheck Qu4 = new ItemCheck(thoriumMod.ItemType("JellyPondWand"));
 				QueenJellyfish4.SetResult(Qu4.Validate(), 1);
 				QueenJellyfish4.AddRecipe();
+
+				ModRecipe QueenJellyfish5 = new ModRecipe(this);
+				QueenJellyfish5.AddRecipeGroup("JumpStart:QueenJellyfish", 1);
+				QueenJellyfish5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				QueenJellyfish5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Qu5 = new ItemCheck(thoriumMod.ItemType("ConchShell"));
+				QueenJellyfish5.SetResult(Qu5.Validate(), 1);
+				QueenJellyfish5.AddRecipe();
+
+				ModRecipe Viscount1 = new ModRecipe(this);
+				Viscount1.AddRecipeGroup("JumpStart:Viscount", 1);
+				Viscount1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Viscount1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Vi1 = new ItemCheck(thoriumMod.ItemType("BatWing"));
+				Viscount1.SetResult(Vi1.Validate(), 1);
+				Viscount1.AddRecipe();
+
+				ModRecipe Viscount2 = new ModRecipe(this);
+				Viscount2.AddRecipeGroup("JumpStart:Viscount", 1);
+				Viscount2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Viscount2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Vi2 = new ItemCheck(thoriumMod.ItemType("GuanoGunner"));
+				Viscount2.SetResult(Vi2.Validate(), 1);
+				Viscount2.AddRecipe();
+
+				ModRecipe Viscount3 = new ModRecipe(this);
+				Viscount3.AddRecipeGroup("JumpStart:Viscount", 1);
+				Viscount3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Viscount3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Vi3 = new ItemCheck(thoriumMod.ItemType("VampireScepter"));
+				Viscount3.SetResult(Vi3.Validate(), 1);
+				Viscount3.AddRecipe();
+
+				ModRecipe Viscount4 = new ModRecipe(this);
+				Viscount4.AddRecipeGroup("JumpStart:Viscount", 1);
+				Viscount4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Viscount4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Vi4 = new ItemCheck(thoriumMod.ItemType("ViscountCane"));
+				Viscount4.SetResult(Vi4.Validate(), 1);
+				Viscount4.AddRecipe();
+
+				ModRecipe Viscount5 = new ModRecipe(this);
+				Viscount5.AddRecipeGroup("JumpStart:Viscount", 1);
+				Viscount5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Viscount5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Vi5 = new ItemCheck(thoriumMod.ItemType("BatScythe"));
+				Viscount5.SetResult(Vi5.Validate(), 1);
+				Viscount5.AddRecipe();
+
+				ModRecipe Viscount6 = new ModRecipe(this);
+				Viscount6.AddRecipeGroup("JumpStart:Viscount", 1);
+				Viscount6.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Viscount6.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Vi6 = new ItemCheck(thoriumMod.ItemType("SonarCannon"));
+				Viscount6.SetResult(Vi6.Validate(), 1);
+				Viscount6.AddRecipe();
+
+				ModRecipe GraniteEnergyStorm1 = new ModRecipe(this);
+				GraniteEnergyStorm1.AddRecipeGroup("JumpStart:GraniteEnergyStorm", 1);
+				GraniteEnergyStorm1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				GraniteEnergyStorm1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ga1 = new ItemCheck(thoriumMod.ItemType("EnergyStormPartisan"));
+				GraniteEnergyStorm1.SetResult(Ga1.Validate(), 1);
+				GraniteEnergyStorm1.AddRecipe();
+
+				ModRecipe GraniteEnergyStorm2 = new ModRecipe(this);
+				GraniteEnergyStorm2.AddRecipeGroup("JumpStart:GraniteEnergyStorm", 1);
+				GraniteEnergyStorm2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				GraniteEnergyStorm2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ga2 = new ItemCheck(thoriumMod.ItemType("EnergyStormBolter"));
+				GraniteEnergyStorm2.SetResult(Ga2.Validate(), 1);
+				GraniteEnergyStorm2.AddRecipe();
+
+				ModRecipe GraniteEnergyStorm3 = new ModRecipe(this);
+				GraniteEnergyStorm3.AddRecipeGroup("JumpStart:GraniteEnergyStorm", 1);
+				GraniteEnergyStorm3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				GraniteEnergyStorm3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ga3 = new ItemCheck(thoriumMod.ItemType("EnergyProjector"));
+				GraniteEnergyStorm3.SetResult(Ga3.Validate(), 1);
+				GraniteEnergyStorm3.AddRecipe();
+
+				ModRecipe GraniteEnergyStorm4 = new ModRecipe(this);
+				GraniteEnergyStorm4.AddRecipeGroup("JumpStart:GraniteEnergyStorm", 1);
+				GraniteEnergyStorm4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				GraniteEnergyStorm4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ga4 = new ItemCheck(thoriumMod.ItemType("BoulderProbe"));
+				GraniteEnergyStorm4.SetResult(Ga4.Validate(), 1);
+				GraniteEnergyStorm4.AddRecipe();
+
+				ModRecipe GraniteEnergyStorm5 = new ModRecipe(this);
+				GraniteEnergyStorm5.AddRecipeGroup("JumpStart:GraniteEnergyStorm", 1);
+				GraniteEnergyStorm5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				GraniteEnergyStorm5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ga5 = new ItemCheck(thoriumMod.ItemType("ShockAbsorber"));
+				GraniteEnergyStorm5.SetResult(Ga5.Validate(), 1);
+				GraniteEnergyStorm5.AddRecipe();
+
+				ModRecipe BuriedChampion1 = new ModRecipe(this);
+				BuriedChampion1.AddRecipeGroup("JumpStart:BuriedChampion", 1);
+				BuriedChampion1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				BuriedChampion1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Bu1 = new ItemCheck(thoriumMod.ItemType("ChampionBlade"));
+				BuriedChampion1.SetResult(Bu1.Validate(), 1);
+				BuriedChampion1.AddRecipe();
+
+				ModRecipe BuriedChampion2 = new ModRecipe(this);
+				BuriedChampion2.AddRecipeGroup("JumpStart:BuriedChampion", 1);
+				BuriedChampion2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				BuriedChampion2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Bu2 = new ItemCheck(thoriumMod.ItemType("HeroTripleBow"));
+				BuriedChampion2.SetResult(Bu2.Validate(), 1);
+				BuriedChampion2.AddRecipe();
+
+				ModRecipe BuriedChampion3 = new ModRecipe(this);
+				BuriedChampion3.AddRecipeGroup("JumpStart:BuriedChampion", 1);
+				BuriedChampion3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				BuriedChampion3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Bu3 = new ItemCheck(thoriumMod.ItemType("ChampionBomberStaff"));
+				BuriedChampion3.SetResult(Bu3.Validate(), 1);
+				BuriedChampion3.AddRecipe();
+
+				ModRecipe BuriedChampion4 = new ModRecipe(this);
+				BuriedChampion4.AddRecipeGroup("JumpStart:BuriedChampion", 1);
+				BuriedChampion4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				BuriedChampion4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Bu4 = new ItemCheck(thoriumMod.ItemType("ChampionsGodHand"));
+				BuriedChampion4.SetResult(Bu4.Validate(), 1);
+				BuriedChampion4.AddRecipe();
+
+				ModRecipe BuriedChampion5 = new ModRecipe(this);
+				BuriedChampion5.AddRecipeGroup("JumpStart:BuriedChampion", 1);
+				BuriedChampion5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				BuriedChampion5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Bu5 = new ItemCheck(thoriumMod.ItemType("ChampionsBarrier"));
+				BuriedChampion5.SetResult(Bu5.Validate(), 1);
+				BuriedChampion5.AddRecipe();
+
+				ModRecipe StarScouter1 = new ModRecipe(this);
+				StarScouter1.AddRecipeGroup("JumpStart:StarScouter", 1);
+				StarScouter1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				StarScouter1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck St1 = new ItemCheck(thoriumMod.ItemType("Roboboe"));
+				StarScouter1.SetResult(St1.Validate(), 1);
+				StarScouter1.AddRecipe();
+
+				ModRecipe StarScouter2 = new ModRecipe(this);
+				StarScouter2.AddRecipeGroup("JumpStart:StarScouter", 1);
+				StarScouter2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				StarScouter2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck St2 = new ItemCheck(thoriumMod.ItemType("StarRod"));
+				StarScouter2.SetResult(St2.Validate(), 1);
+				StarScouter2.AddRecipe();
+
+				ModRecipe StarScouter3 = new ModRecipe(this);
+				StarScouter3.AddRecipeGroup("JumpStart:StarScouter", 1);
+				StarScouter3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				StarScouter3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck St3 = new ItemCheck(thoriumMod.ItemType("GaussKnife"));
+				StarScouter3.SetResult(St3.Validate(), 1);
+				StarScouter3.AddRecipe();
+
+				ModRecipe StarScouter4 = new ModRecipe(this);
+				StarScouter4.AddRecipeGroup("JumpStart:StarScouter", 1);
+				StarScouter4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				StarScouter4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck St4 = new ItemCheck(thoriumMod.ItemType("DistressCaller"));
+				StarScouter4.SetResult(St4.Validate(), 1);
+				StarScouter4.AddRecipe();
+
+				ModRecipe StarScouter5 = new ModRecipe(this);
+				StarScouter5.AddRecipeGroup("JumpStart:StarScouter", 1);
+				StarScouter5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				StarScouter5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck St5 = new ItemCheck(thoriumMod.ItemType("HitScanner"));
+				StarScouter5.SetResult(St5.Validate(), 1);
+				StarScouter5.AddRecipe();
+
+				ModRecipe StarScouter6 = new ModRecipe(this);
+				StarScouter6.AddRecipeGroup("JumpStart:StarScouter", 1);
+				StarScouter6.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				StarScouter6.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck St6 = new ItemCheck(thoriumMod.ItemType("GaussSpark"));
+				StarScouter6.SetResult(St6.Validate(), 1);
+				StarScouter6.AddRecipe();
+
+				ModRecipe StarScouter7 = new ModRecipe(this);
+				StarScouter7.AddRecipeGroup("JumpStart:StarScouter", 1);
+				StarScouter7.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				StarScouter7.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck St7 = new ItemCheck(thoriumMod.ItemType("StarTrail"));
+				StarScouter7.SetResult(St7.Validate(), 1);
+				StarScouter7.AddRecipe();
+
+				ModRecipe BoreanStrider1 = new ModRecipe(this);
+				BoreanStrider1.AddRecipeGroup("JumpStart:BoreanStrider", 1);
+				BoreanStrider1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				BoreanStrider1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Bo1 = new ItemCheck(thoriumMod.ItemType("CryoFang"));
+				BoreanStrider1.SetResult(Bo1.Validate(), 1);
+				BoreanStrider1.AddRecipe();
+
+				ModRecipe BoreanStrider2 = new ModRecipe(this);
+				BoreanStrider2.AddRecipeGroup("JumpStart:BoreanStrider", 1);
+				BoreanStrider2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				BoreanStrider2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Bo2 = new ItemCheck(thoriumMod.ItemType("FreezeRay"));
+				BoreanStrider2.SetResult(Bo2.Validate(), 1);
+				BoreanStrider2.AddRecipe();
+
+				ModRecipe BoreanStrider3 = new ModRecipe(this);
+				BoreanStrider3.AddRecipeGroup("JumpStart:BoreanStrider", 1);
+				BoreanStrider3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				BoreanStrider3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Bo3 = new ItemCheck(thoriumMod.ItemType("FrostFang"));
+				BoreanStrider3.SetResult(Bo3.Validate(), 1);
+				BoreanStrider3.AddRecipe();
+
+				ModRecipe BoreanStrider4 = new ModRecipe(this);
+				BoreanStrider4.AddRecipeGroup("JumpStart:BoreanStrider", 1);
+				BoreanStrider4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				BoreanStrider4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Bo4 = new ItemCheck(thoriumMod.ItemType("GlacierFang"));
+				BoreanStrider4.SetResult(Bo4.Validate(), 1);
+				BoreanStrider4.AddRecipe();
+
+				ModRecipe BoreanStrider5 = new ModRecipe(this);
+				BoreanStrider5.AddRecipeGroup("JumpStart:BoreanStrider", 1);
+				BoreanStrider5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				BoreanStrider5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Bo5 = new ItemCheck(thoriumMod.ItemType("GlacialSting"));
+				BoreanStrider5.SetResult(Bo5.Validate(), 1);
+				BoreanStrider5.AddRecipe();
+
+				ModRecipe FallenBeholder1 = new ModRecipe(this);
+				FallenBeholder1.AddRecipeGroup("JumpStart:FallenBeholder", 1);
+				FallenBeholder1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				FallenBeholder1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Fa1 = new ItemCheck(thoriumMod.ItemType("VoidPlanter"));
+				FallenBeholder1.SetResult(Fa1.Validate(), 1);
+				FallenBeholder1.AddRecipe();
+
+				ModRecipe FallenBeholder2 = new ModRecipe(this);
+				FallenBeholder2.AddRecipeGroup("JumpStart:FallenBeholder", 1);
+				FallenBeholder2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				FallenBeholder2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Fa2 = new ItemCheck(thoriumMod.ItemType("BeholderStaff"));
+				FallenBeholder2.SetResult(Fa2.Validate(), 1);
+				FallenBeholder2.AddRecipe();
+
+				ModRecipe FallenBeholder3 = new ModRecipe(this);
+				FallenBeholder3.AddRecipeGroup("JumpStart:FallenBeholder", 1);
+				FallenBeholder3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				FallenBeholder3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Fa3 = new ItemCheck(thoriumMod.ItemType("DevilPauldron"));
+				FallenBeholder3.SetResult(Fa3.Validate(), 1);
+				FallenBeholder3.AddRecipe();
+
+				ModRecipe FallenBeholder4 = new ModRecipe(this);
+				FallenBeholder4.AddRecipeGroup("JumpStart:FallenBeholder", 1);
+				FallenBeholder4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				FallenBeholder4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Fa4 = new ItemCheck(thoriumMod.ItemType("DemonFireBlastWand"));
+				FallenBeholder4.SetResult(Fa4.Validate(), 1);
+				FallenBeholder4.AddRecipe();
+
+				ModRecipe FallenBeholder5 = new ModRecipe(this);
+				FallenBeholder5.AddRecipeGroup("JumpStart:FallenBeholder", 1);
+				FallenBeholder5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				FallenBeholder5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Fa5 = new ItemCheck(thoriumMod.ItemType("Obliterator"));
+				FallenBeholder5.SetResult(Fa5.Validate(), 1);
+				FallenBeholder5.AddRecipe();
+
+				ModRecipe FallenBeholder6 = new ModRecipe(this);
+				FallenBeholder6.AddRecipeGroup("JumpStart:FallenBeholder", 1);
+				FallenBeholder6.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				FallenBeholder6.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Fa6 = new ItemCheck(thoriumMod.ItemType("ThermogenicImpaler"));
+				FallenBeholder6.SetResult(Fa6.Validate(), 1);
+				FallenBeholder6.AddRecipe();
+
+				ModRecipe Lich1 = new ModRecipe(this);
+				Lich1.AddRecipeGroup("JumpStart:Lich", 1);
+				Lich1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Lich1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Li1 = new ItemCheck(thoriumMod.ItemType("SoulRender"));
+				Lich1.SetResult(Li1.Validate(), 1);
+				Lich1.AddRecipe();
+
+				ModRecipe Lich2 = new ModRecipe(this);
+				Lich2.AddRecipeGroup("JumpStart:Lich", 1);
+				Lich2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Lich2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Li2 = new ItemCheck(thoriumMod.ItemType("WitherStaff"));
+				Lich2.SetResult(Li2.Validate(), 1);
+				Lich2.AddRecipe();
+
+				ModRecipe Lich3 = new ModRecipe(this);
+				Lich3.AddRecipeGroup("JumpStart:Lich", 1);
+				Lich3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Lich3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Li3 = new ItemCheck(thoriumMod.ItemType("CryptWand"));
+				Lich3.SetResult(Li3.Validate(), 1);
+				Lich3.AddRecipe();
+
+				ModRecipe Lich4 = new ModRecipe(this);
+				Lich4.AddRecipeGroup("JumpStart:Lich", 1);
+				Lich4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Lich4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Li4 = new ItemCheck(thoriumMod.ItemType("SoulCleaver"));
+				Lich4.SetResult(Li4.Validate(), 1);
+				Lich4.AddRecipe();
+
+				ModRecipe Lich5 = new ModRecipe(this);
+				Lich5.AddRecipeGroup("JumpStart:Lich", 1);
+				Lich5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Lich5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Li5 = new ItemCheck(thoriumMod.ItemType("CadaverCornet"));
+				Lich5.SetResult(Li5.Validate(), 1);
+				Lich5.AddRecipe();
+
+				ModRecipe Abyssion1 = new ModRecipe(this);
+				Abyssion1.AddRecipeGroup("JumpStart:Abyssion", 1);
+				Abyssion1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Abyssion1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ab1 = new ItemCheck(thoriumMod.ItemType("SirensAllure"));
+				Abyssion1.SetResult(Ab1.Validate(), 1);
+				Abyssion1.AddRecipe();
+
+				ModRecipe Abyssion2 = new ModRecipe(this);
+				Abyssion2.AddRecipeGroup("JumpStart:Abyssion", 1);
+				Abyssion2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Abyssion2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ab2 = new ItemCheck(thoriumMod.ItemType("OldGodGrasp"));
+				Abyssion2.SetResult(Ab2.Validate(), 1);
+				Abyssion2.AddRecipe();
+
+				ModRecipe Abyssion3 = new ModRecipe(this);
+				Abyssion3.AddRecipeGroup("JumpStart:Abyssion", 1);
+				Abyssion3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Abyssion3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ab3 = new ItemCheck(thoriumMod.ItemType("TrenchSpitter"));
+				Abyssion3.SetResult(Ab3.Validate(), 1);
+				Abyssion3.AddRecipe();
+
+				ModRecipe Abyssion4 = new ModRecipe(this);
+				Abyssion4.AddRecipeGroup("JumpStart:Abyssion", 1);
+				Abyssion4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Abyssion4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ab4 = new ItemCheck(thoriumMod.ItemType("MantisPunch"));
+				Abyssion4.SetResult(Ab4.Validate(), 1);
+				Abyssion4.AddRecipe();
+
+				ModRecipe Abyssion5 = new ModRecipe(this);
+				Abyssion5.AddRecipeGroup("JumpStart:Abyssion", 1);
+				Abyssion5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Abyssion5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ab5 = new ItemCheck(thoriumMod.ItemType("TheIncubator"));
+				Abyssion5.SetResult(Ab5.Validate(), 1);
+				Abyssion5.AddRecipe();
+
 			}
 			if (sacredToolsMod != null && imkSushisMod != null) {
 				
