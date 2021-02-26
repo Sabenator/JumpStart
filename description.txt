@@ -14,11 +14,14 @@ Currently it adds:
 
 -Thorium support for imkSushisMod loot swap tokens, ALL BOSSES
 
+-Ultranium support for imkSushisMod loot swap tokens, ALL BOSSES
+
 -Some Pre-Hardmode bosses drop Magic Storage components
 
 -Some Pre-Hardmode bosses drop Gem bags.
 
--Hey Mick, hows it going with adding recipes? Now do you understand what I meant by spell checking?
+-Hey Mick, hows it going with adding recipes? Now do you understand what I meant by spell checking? My favorite mispelling was "InfectousJavelin" in Redemption mod. Took me a while to notice that!
+
 Planned Features:
 
 -More loot Swapping recipes for: Elements awoken, Ancients Awakened, Ultranium, etc (probably in this order)

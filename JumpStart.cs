@@ -476,7 +476,7 @@ namespace JumpStart
 			if (ultraniumMod != null)
 			{
 				rg ZephyrSquid = new rg(ultraniumMod, "Zephyr Squid", "ZephyrBlade", "ZephyrKnife", "ZephyrTrident");
-				RecipeGroup.RegisterGroup("JumpStart:Zephyr", ZephyrSquid._RecipeGroup);
+				RecipeGroup.RegisterGroup("JumpStart:ZephyrSquid", ZephyrSquid._RecipeGroup);
 				RecipeGroups.Add("ZephyrSquid");
 
 				rg Glacieron = new rg(ultraniumMod, "Glacieron", "GlacialFlail", "GlacialGun", "GlacialWand");
@@ -819,13 +819,117 @@ namespace JumpStart
 				AbsoluteDread4.SetResult(Ab4.Validate(), 1);
 				AbsoluteDread4.AddRecipe();
 
-				ModRecipe AbsoluteDread = new ModRecipe(this);
-				AbsoluteDread1.AddRecipeGroup("JumpStart:AbsoluteDread", 1);
-				AbsoluteDread1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
-				AbsoluteDread1.AddTile(TileID.TinkerersWorkbench);
-				ItemCheck Ab1 = new ItemCheck(ultraniumMod.ItemType("DreadDisc"));
-				AbsoluteDread1.SetResult(Ab1.Validate(), 1);
-				AbsoluteDread1.AddRecipe();
+				ModRecipe AbsoluteDread5 = new ModRecipe(this);
+				AbsoluteDread5.AddRecipeGroup("JumpStart:AbsoluteDread", 1);
+				AbsoluteDread5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				AbsoluteDread5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ab5 = new ItemCheck(ultraniumMod.ItemType("DreadSpear"));
+				AbsoluteDread5.SetResult(Ab5.Validate(), 1);
+				AbsoluteDread5.AddRecipe();
+
+				ModRecipe AbsoluteDread6 = new ModRecipe(this);
+				AbsoluteDread6.AddRecipeGroup("JumpStart:AbsoluteDread", 1);
+				AbsoluteDread6.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				AbsoluteDread6.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ab6 = new ItemCheck(ultraniumMod.ItemType("DreadTome"));
+				AbsoluteDread6.SetResult(Ab6.Validate(), 1);
+				AbsoluteDread6.AddRecipe();
+
+				ModRecipe AbsoluteDread7 = new ModRecipe(this);
+				AbsoluteDread7.AddRecipeGroup("JumpStart:AbsoluteDread", 1);
+				AbsoluteDread7.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				AbsoluteDread7.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ab7 = new ItemCheck(ultraniumMod.ItemType("FearStaff"));
+				AbsoluteDread7.SetResult(Ab7.Validate(), 1);
+				AbsoluteDread7.AddRecipe();
+
+				ModRecipe AbsoluteDread8 = new ModRecipe(this);
+				AbsoluteDread8.AddRecipeGroup("JumpStart:AbsoluteDread", 1);
+				AbsoluteDread8.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				AbsoluteDread8.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Ab8 = new ItemCheck(ultraniumMod.ItemType("DreadYoyo"));
+				AbsoluteDread8.SetResult(Ab8.Validate(), 1);
+				AbsoluteDread8.AddRecipe();
+
+				ModRecipe Erebus1 = new ModRecipe(this);
+				Erebus1.AddRecipeGroup("JumpStart:Erebus", 1);
+				Erebus1.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Erebus1.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Er1 = new ItemCheck(ultraniumMod.ItemType("Caliginus"));
+				Erebus1.SetResult(Er1.Validate(), 1);
+				Erebus1.AddRecipe();
+
+				ModRecipe Erebus2 = new ModRecipe(this);
+				Erebus2.AddRecipeGroup("JumpStart:Erebus", 1);
+				Erebus2.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Erebus2.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Er2 = new ItemCheck(ultraniumMod.ItemType("CavumNigrum"));
+				Erebus2.SetResult(Er2.Validate(), 1);
+				Erebus2.AddRecipe();
+
+				ModRecipe Erebus3 = new ModRecipe(this);
+				Erebus3.AddRecipeGroup("JumpStart:Erebus", 1);
+				Erebus3.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Erebus3.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Er3 = new ItemCheck(ultraniumMod.ItemType("Cepus"));
+				Erebus3.SetResult(Er3.Validate(), 1);
+				Erebus3.AddRecipe();
+
+				ModRecipe Erebus4 = new ModRecipe(this);
+				Erebus4.AddRecipeGroup("JumpStart:Erebus", 1);
+				Erebus4.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Erebus4.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Er4 = new ItemCheck(ultraniumMod.ItemType("ErebusGuitar"));
+				Erebus4.SetResult(Er4.Validate(), 1);
+				Erebus4.AddRecipe();
+
+				ModRecipe Erebus5 = new ModRecipe(this);
+				Erebus5.AddRecipeGroup("JumpStart:Erebus", 1);
+				Erebus5.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Erebus5.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Er5 = new ItemCheck(ultraniumMod.ItemType("Exitium"));
+				Erebus5.SetResult(Er5.Validate(), 1);
+				Erebus5.AddRecipe();
+
+				ModRecipe Erebus6 = new ModRecipe(this);
+				Erebus6.AddRecipeGroup("JumpStart:Erebus", 1);
+				Erebus6.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Erebus6.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Er6 = new ItemCheck(ultraniumMod.ItemType("Inanis"));
+				Erebus6.SetResult(Er6.Validate(), 1);
+				Erebus6.AddRecipe();
+
+				ModRecipe Erebus7 = new ModRecipe(this);
+				Erebus7.AddRecipeGroup("JumpStart:Erebus", 1);
+				Erebus7.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Erebus7.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Er7 = new ItemCheck(ultraniumMod.ItemType("Nihil"));
+				Erebus7.SetResult(Er7.Validate(), 1);
+				Erebus7.AddRecipe();
+
+				ModRecipe Erebus8 = new ModRecipe(this);
+				Erebus8.AddRecipeGroup("JumpStart:Erebus", 1);
+				Erebus8.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Erebus8.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Er8 = new ItemCheck(ultraniumMod.ItemType("Noctis"));
+				Erebus8.SetResult(Er8.Validate(), 1);
+				Erebus8.AddRecipe();
+
+				ModRecipe Erebus9 = new ModRecipe(this);
+				Erebus9.AddRecipeGroup("JumpStart:Erebus", 1);
+				Erebus9.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Erebus9.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Er9 = new ItemCheck(ultraniumMod.ItemType("SolibusOrba"));
+				Erebus9.SetResult(Er9.Validate(), 1);
+				Erebus9.AddRecipe();
+
+				ModRecipe Erebus10 = new ModRecipe(this);
+				Erebus10.AddRecipeGroup("JumpStart:Erebus", 1);
+				Erebus10.AddIngredient(imkSushisMod.ItemType("SwapToken"), 1);
+				Erebus10.AddTile(TileID.TinkerersWorkbench);
+				ItemCheck Er10 = new ItemCheck(ultraniumMod.ItemType("Umbra"));
+				Erebus10.SetResult(Er10.Validate(), 1);
+				Erebus10.AddRecipe();
 
 			}
 			if (thoriumMod != null && imkSushisMod != null) {
